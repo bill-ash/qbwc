@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <QBWCXML>
+        <AppName>Example Project</AppName>
+        <AppID></AppID>
+        <AppURL>http://localhost:8080/webconnector/</AppURL>
+        <AppDescription>Example test project</AppDescription>
+        <AppSupport>http://localhost:8080/support/</AppSupport>
+        <UserName>06c7c38e-8703-4f48-8aca-f07ef7a03968</UserName>
+        <OwnerID>{417eb939-4ee9-40da-8e8a-d1269aaa2eb3}</OwnerID>
+        <FileID>{f96e87a8-fad4-4abd-922c-ce9835bd5934}</FileID>
+        <QBType>QBFS</QBType>
+        <Scheduler>
+            <RunEveryNMinutes>60</RunEveryNMinutes>
+        </Scheduler>
+    </QBWCXML>

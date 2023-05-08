@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import GlAccount, OtherNameList
 
-# Register your models here.
+admin.site.register(OtherNameList)
+admin.site.register(GlAccount)

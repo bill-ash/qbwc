@@ -6,6 +6,7 @@ Quickbooks Webconnector (QBWC).
 Implementation includes transfer services for: 
 
 - gl accounts  
+- other name list
 - expenses (credit card transactions)
 
 Road map: 
