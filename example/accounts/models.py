@@ -68,7 +68,7 @@ class GlAccount(BaseObjectMixin):
         )
 
     # Mirror QB attributes
-    name = models.CharField(max_length=60, unique=True)
+    name = models.CharField(max_length=60)
     full_name = models.CharField(max_length=60, unique=True)
     description = models.TextField(blank=True, null=True)
     account_type = models.CharField(max_length=50)

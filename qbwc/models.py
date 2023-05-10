@@ -118,8 +118,8 @@ class Ticket(TimeStampedModel):
         SUCCESS = ("201", "Success")
         FAILED = ("500", "Failed")
 
-    batch_id = models.CharField(max_length=60, default=uuid4, editable=False)
-    ticket = models.CharField(max_length=60, default=uuid4, editable=False)
+    batch_id = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
+    ticket = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
     status = models.CharField(
         max_length=3, choices=TicketStatus.choices, default=TicketStatus.CREATED
     )
@@ -172,30 +172,15 @@ class Task(TimeStampedModel):
     "Wrapper around app transactions that to affect change or action in QB"
 
     class TaskMethod(models.TextChoices):
-        GET = (
-            "GET",
-            "GET",
-        )
-        POST = (
-            "POST",
-            "POST",
-        )
-        PATCH = (
-            "PATCH",
-            "PATCH",
-        )
-        VOID = (
-            "VOID",
-            "VOID",
-        )
-        DELETE = (
-            "DELETE",
-            "DELETE",
-        )
+        GET = ("GET","GET",)
+        POST = ("POST","POST",)
+        PATCH = ("PATCH","PATCH",)
+        VOID = ("VOID","VOID",)
+        DELETE = ("DELETE","DELETE",)
 
     class BatchStatus(models.TextChoices):
-        BATCHED = ("BATCHED", "BATCHED")
-        UN_BATCHED = ("UN_BATCHED", "UN_BATCHED")
+        BATCHED = ("BATCHED", "BATCHED",)
+        UN_BATCHED = ("UN_BATCHED", "UN_BATCHED",)
 
     batch_status = models.CharField(
         max_length=20, choices=BatchStatus.choices, default=BatchStatus.UN_BATCHED
@@ -208,9 +193,10 @@ class Task(TimeStampedModel):
     model = models.CharField(max_length=90)
     ticket = models.ForeignKey(Ticket, related_name="tasks", on_delete=models.CASCADE)
 
-    model_instance = models.ForeignKey(
-        "BaseObjectMixin", null=True, on_delete=models.CASCADE
-    )
+    # model_instance = models.ForeignKey(
+    #     "BaseObjectMixin", null=True, on_delete=models.CASCADE
+    # )
+    model_instance = models.CharField(max_length=120, null=True, editable=False)
 
     def get_model(self):
         """
@@ -226,7 +212,7 @@ class Task(TimeStampedModel):
         if self.model_instance:
             return (
                 self.get_model()
-                .objects.get(id=self.model_instance.id)
+                .objects.get(id=self.model_instance)
                 .request(self.method)
             )
         return self.get_model()().request(self.method)
@@ -234,7 +220,7 @@ class Task(TimeStampedModel):
     def process_response(self, *args, **kwargs):
         "An instance of a task"
         if self.model_instance:
-            self.get_model().objects.get(id=self.model_instance.id).process(
+            self.get_model().objects.get(id=self.model_instance).process(
                 self.method, *args, **kwargs
             )
         else:
@@ -261,3 +247,9 @@ class BaseObjectMixin(TimeStampedModel):
 
     def process(self, method, *args, **kwargs):
         raise NotImplemented
+    
+    def get_str_id(self):
+        return str(self.id)
+    
+    class Meta:
+        abstract = True
