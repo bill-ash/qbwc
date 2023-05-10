@@ -1,0 +1,2214 @@
+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<AccountQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<AccountRet>
+<ListID>20000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Checking</Name>
+<FullName>Checking</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Bank</AccountType>
+<AccountNumber>10100</AccountNumber>
+<Desc>Cash</Desc>
+<Balance>46969.10</Balance>
+<TotalBalance>46969.10</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1535</TaxLineID>
+<TaxLineName>B/S-Assets: Cash</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>30000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Savings</Name>
+<FullName>Savings</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Bank</AccountType>
+<AccountNumber>10300</AccountNumber>
+<Desc>Savings</Desc>
+<Balance>17910.19</Balance>
+<TotalBalance>17910.19</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1535</TaxLineID>
+<TaxLineName>B/S-Assets: Cash</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>550001-1071509830</ListID>
+<TimeCreated>2003-12-15T12:37:10-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Petty Cash</Name>
+<FullName>Petty Cash</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Bank</AccountType>
+<AccountNumber>10400</AccountNumber>
+<Desc>Petty Cash</Desc>
+<Balance>500.00</Balance>
+<TotalBalance>500.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1535</TaxLineID>
+<TaxLineName>B/S-Assets: Cash</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>40000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Accounts Receivable</Name>
+<FullName>Accounts Receivable</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>AccountsReceivable</AccountType>
+<AccountNumber>11000</AccountNumber>
+<Desc>Accounts Receivable</Desc>
+<Balance>93007.93</Balance>
+<TotalBalance>93007.93</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1537</TaxLineID>
+<TaxLineName>B/S-Assets: Accts. Rec. and trade notes</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Undeposited Funds</Name>
+<FullName>Undeposited Funds</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentAsset</AccountType>
+<SpecialAccountType>UndepositedFunds</SpecialAccountType>
+<AccountNumber>12000</AccountNumber>
+<Desc>Undeposited Funds</Desc>
+<Balance>2440.00</Balance>
+<TotalBalance>2440.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1547</TaxLineID>
+<TaxLineName>B/S-Assets: Other current assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>60000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Inventory Asset</Name>
+<FullName>Inventory Asset</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentAsset</AccountType>
+<SpecialAccountType>InventoryAssets</SpecialAccountType>
+<AccountNumber>12100</AccountNumber>
+<Desc>Inventory Asset</Desc>
+<Balance>30683.38</Balance>
+<TotalBalance>30683.38</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1547</TaxLineID>
+<TaxLineName>B/S-Assets: Other current assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>50000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Employee Advances</Name>
+<FullName>Employee Advances</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentAsset</AccountType>
+<AccountNumber>12800</AccountNumber>
+<Desc>Employee Advances</Desc>
+<Balance>832.00</Balance>
+<TotalBalance>832.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1547</TaxLineID>
+<TaxLineName>B/S-Assets: Other current assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>370001-1071514466</ListID>
+<TimeCreated>2003-12-15T13:54:26-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Pre-paid Insurance</Name>
+<FullName>Pre-paid Insurance</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentAsset</AccountType>
+<AccountNumber>13100</AccountNumber>
+<Desc>Pre-paid Insurance</Desc>
+<Balance>4050.00</Balance>
+<TotalBalance>4050.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1547</TaxLineID>
+<TaxLineName>B/S-Assets: Other current assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>70000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Retainage Receivable</Name>
+<FullName>Retainage Receivable</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentAsset</AccountType>
+<AccountNumber>13400</AccountNumber>
+<Desc>Retainage Receivable</Desc>
+<Balance>3703.02</Balance>
+<TotalBalance>3703.02</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1547</TaxLineID>
+<TaxLineName>B/S-Assets: Other current assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>5F0000-1197755449</ListID>
+<TimeCreated>2007-12-15T16:50:49-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Furniture and Equipment</Name>
+<FullName>Furniture and Equipment</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>15000</AccountNumber>
+<Desc>Furniture and Equipment</Desc>
+<Balance>34326.00</Balance>
+<TotalBalance>34326.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>90000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Vehicles</Name>
+<FullName>Vehicles</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>15100</AccountNumber>
+<Desc>Vehicles</Desc>
+<Balance>78936.91</Balance>
+<TotalBalance>78936.91</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>A0000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Original Cost</Name>
+<FullName>Vehicles:Original Cost</FullName>
+<IsActive>false</IsActive>
+<ParentRef>
+<ListID>90000-933270541</ListID>
+<FullName>Vehicles</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>1510</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>B0000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Depreciation</Name>
+<FullName>Vehicles:Depreciation</FullName>
+<IsActive>false</IsActive>
+<ParentRef>
+<ListID>90000-933270541</ListID>
+<FullName>Vehicles</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>1520</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>600000-1197756365</ListID>
+<TimeCreated>2007-12-15T17:06:05-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Buildings and Improvements</Name>
+<FullName>Buildings and Improvements</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>15200</AccountNumber>
+<Desc>Buildings and Improvements</Desc>
+<Balance>325000.00</Balance>
+<TotalBalance>325000.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>590000-1071511920</ListID>
+<TimeCreated>2003-12-15T13:12:00-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Construction Equipment</Name>
+<FullName>Construction Equipment</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>15300</AccountNumber>
+<Desc>Construction Equipment</Desc>
+<Balance>15300.00</Balance>
+<TotalBalance>15300.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>610000-1197756496</ListID>
+<TimeCreated>2007-12-15T17:08:16-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Land</Name>
+<FullName>Land</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>16900</AccountNumber>
+<Desc>Land</Desc>
+<Balance>90000.00</Balance>
+<TotalBalance>90000.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1563</TaxLineID>
+<TaxLineName>B/S-Assets: Land</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>620000-1197756666</ListID>
+<TimeCreated>2007-12-15T17:11:06-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Accumulated Depreciation</Name>
+<FullName>Accumulated Depreciation</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>FixedAsset</AccountType>
+<AccountNumber>17000</AccountNumber>
+<Desc>Accumulated Depreciation</Desc>
+<Balance>-110344.60</Balance>
+<TotalBalance>-110344.60</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1555</TaxLineID>
+<TaxLineName>B/S-Assets: Buildings/oth. depr. assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000063-1197709076</ListID>
+<TimeCreated>2007-12-15T03:57:56-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Security Deposits</Name>
+<FullName>Security Deposits</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherAsset</AccountType>
+<AccountNumber>18700</AccountNumber>
+<Desc>Security Deposits</Desc>
+<Balance>1720.00</Balance>
+<TotalBalance>1720.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1569</TaxLineID>
+<TaxLineName>B/S-Assets: Other assets</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Investing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>C0000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Accounts Payable</Name>
+<FullName>Accounts Payable</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>AccountsPayable</AccountType>
+<AccountNumber>20000</AccountNumber>
+<Desc>Moneys you owe to vendors and suppliers</Desc>
+<Balance>26636.92</Balance>
+<TotalBalance>26636.92</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1573</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Accounts payable</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>570000-1071509253</ListID>
+<TimeCreated>2003-12-15T12:27:33-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>QuickBooks Credit Card</Name>
+<FullName>QuickBooks Credit Card</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CreditCard</AccountType>
+<AccountNumber>20500</AccountNumber>
+<BankNumber>5555-4444-3333-4521</BankNumber>
+<Desc>QuickBooks Credit Card</Desc>
+<Balance>94.20</Balance>
+<TotalBalance>94.20</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007E-1197732180</ListID>
+<TimeCreated>2007-12-15T10:23:00-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>CalOil Credit Card</Name>
+<FullName>CalOil Credit Card</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CreditCard</AccountType>
+<AccountNumber>20600</AccountNumber>
+<Balance>382.62</Balance>
+<TotalBalance>382.62</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000082-1197753773</ListID>
+<TimeCreated>2007-12-15T16:22:53-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Subcontracted Federal WH</Name>
+<FullName>Subcontracted Federal WH</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>110000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Due to Owner</Name>
+<FullName>Due to Owner</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>20700</AccountNumber>
+<Desc>Short Term Loan from Owner - No Note or Bond</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4F0001-1071527477</ListID>
+<TimeCreated>2003-12-15T17:31:17-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Payroll Liabilities</Name>
+<FullName>Payroll Liabilities</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<SpecialAccountType>PayrollLiabilities</SpecialAccountType>
+<AccountNumber>24000</AccountNumber>
+<Desc>Payroll Liabilities</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>5404.45</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006E-1197716149</ListID>
+<TimeCreated>2007-12-15T05:55:49-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Federal Withholding</Name>
+<FullName>Payroll Liabilities:Federal Withholding</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24010</AccountNumber>
+<Balance>1364.00</Balance>
+<TotalBalance>1364.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006F-1197716183</ListID>
+<TimeCreated>2007-12-15T05:56:23-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>FICA Payable</Name>
+<FullName>Payroll Liabilities:FICA Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24020</AccountNumber>
+<Balance>2118.82</Balance>
+<TotalBalance>2118.82</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006B-1197716074</ListID>
+<TimeCreated>2007-12-15T05:54:34-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>AEIC Payable</Name>
+<FullName>Payroll Liabilities:AEIC Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24030</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006C-1197716105</ListID>
+<TimeCreated>2007-12-15T05:55:05-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>FUTA Payable</Name>
+<FullName>Payroll Liabilities:FUTA Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24040</AccountNumber>
+<Balance>100.00</Balance>
+<TotalBalance>100.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000071-1197716353</ListID>
+<TimeCreated>2007-12-15T05:59:13-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>State Withholding</Name>
+<FullName>Payroll Liabilities:State Withholding</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24050</AccountNumber>
+<Balance>299.19</Balance>
+<TotalBalance>299.19</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000073-1197716416</ListID>
+<TimeCreated>2007-12-15T06:00:16-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>SUTA Payable</Name>
+<FullName>Payroll Liabilities:SUTA Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24060</AccountNumber>
+<Balance>110.00</Balance>
+<TotalBalance>110.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000072-1197716383</ListID>
+<TimeCreated>2007-12-15T05:59:43-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>State Disability Payable</Name>
+<FullName>Payroll Liabilities:State Disability Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24070</AccountNumber>
+<Balance>48.13</Balance>
+<TotalBalance>48.13</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006A-1197716008</ListID>
+<TimeCreated>2007-12-15T05:53:28-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Worker&apos;s Compensation</Name>
+<FullName>Payroll Liabilities:Worker&apos;s Compensation</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24080</AccountNumber>
+<Balance>1214.31</Balance>
+<TotalBalance>1214.31</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>E0000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Direct Deposit Liabilities</Name>
+<FullName>Payroll Liabilities:Direct Deposit Liabilities</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24090</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007C-1197715628</ListID>
+<TimeCreated>2007-12-15T05:47:08-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Emp. Health Ins Payable</Name>
+<FullName>Payroll Liabilities:Emp. Health Ins Payable</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>4F0001-1071527477</ListID>
+<FullName>Payroll Liabilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<AccountNumber>24100</AccountNumber>
+<Balance>150.00</Balance>
+<TotalBalance>150.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>100000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Sales Tax Payable</Name>
+<FullName>Sales Tax Payable</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherCurrentLiability</AccountType>
+<SpecialAccountType>SalesTaxPayable</SpecialAccountType>
+<AccountNumber>25500</AccountNumber>
+<Desc>Sales Tax Payable</Desc>
+<Balance>957.63</Balance>
+<TotalBalance>957.63</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>120000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan - Vehicles (Van)</Name>
+<FullName>Loan - Vehicles (Van)</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>23000</AccountNumber>
+<Desc>3/4 Ton PU - 48 months 6.9% purchased 12/01/2005</Desc>
+<Balance>10501.47</Balance>
+<TotalBalance>10501.47</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000075-1197719780</ListID>
+<TimeCreated>2007-12-15T06:56:20-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan - Vehicles (Utility Truck)</Name>
+<FullName>Loan - Vehicles (Utility Truck)</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>23100</AccountNumber>
+<Desc>Loan - Vehicles (Utility Truck)</Desc>
+<Balance>19936.91</Balance>
+<TotalBalance>19936.91</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000076-1197719828</ListID>
+<TimeCreated>2007-12-15T06:57:08-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan - Vehicles (Pickup Truck)</Name>
+<FullName>Loan - Vehicles (Pickup Truck)</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>23200</AccountNumber>
+<Desc>Loan - Vehicles (Pickup Truck)</Desc>
+<Balance>22641.00</Balance>
+<TotalBalance>22641.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>5B0000-1197774305</ListID>
+<TimeCreated>2007-12-15T22:05:05-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan - Construction Equipment</Name>
+<FullName>Loan - Construction Equipment</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>28100</AccountNumber>
+<BankNumber>4467-66691</BankNumber>
+<Desc>Loan for Construction Equipment</Desc>
+<Balance>13911.32</Balance>
+<TotalBalance>13911.32</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000068-1197710590</ListID>
+<TimeCreated>2007-12-15T04:23:10-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan - Furniture/Office Equip</Name>
+<FullName>Loan - Furniture/Office Equip</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>28200</AccountNumber>
+<Desc>Loan for purchase of furniture and office equipment</Desc>
+<Balance>21000.00</Balance>
+<TotalBalance>21000.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000008F-1197954502</ListID>
+<TimeCreated>2007-12-18T00:08:22-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Note Payable - Bank of Anycity</Name>
+<FullName>Note Payable - Bank of Anycity</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>28700</AccountNumber>
+<Balance>2693.21</Balance>
+<TotalBalance>2693.21</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000067-1197709946</ListID>
+<TimeCreated>2007-12-15T04:12:26-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Mortgage - Office Building</Name>
+<FullName>Mortgage - Office Building</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>LongTermLiability</AccountType>
+<AccountNumber>28900</AccountNumber>
+<Desc>Mortgage - Office  Building</Desc>
+<Balance>296283.00</Balance>
+<TotalBalance>296283.00</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1581</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: L-T Mortgage/note/bonds pay.</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>10000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Opening Bal Equity</Name>
+<FullName>Opening Bal Equity</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Equity</AccountType>
+<SpecialAccountType>OpeningBalanceEquity</SpecialAccountType>
+<AccountNumber>30000</AccountNumber>
+<Desc>Offset account for use during the setup of the company&apos;s QuickBooks data file only.</Desc>
+<Balance>38773.75</Balance>
+<TotalBalance>38773.75</TotalBalance>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000066-1197709715</ListID>
+<TimeCreated>2007-12-15T04:08:35-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Capital Stock</Name>
+<FullName>Capital Stock</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Equity</AccountType>
+<AccountNumber>30100</AccountNumber>
+<Desc>Capital Stock</Desc>
+<Balance>500.00</Balance>
+<TotalBalance>500.00</TotalBalance>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>130000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Shareholder Distributions</Name>
+<FullName>Shareholder Distributions</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Equity</AccountType>
+<AccountNumber>31400</AccountNumber>
+<Desc>Distributions paid to shareholders</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>160000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Retained Earnings</Name>
+<FullName>Retained Earnings</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Equity</AccountType>
+<SpecialAccountType>RetainedEarnings</SpecialAccountType>
+<AccountNumber>32000</AccountNumber>
+<Desc>Retained Earnings</Desc>
+<Balance>18470.43</Balance>
+<TotalBalance>18470.43</TotalBalance>
+<CashFlowClassification>Financing</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>170000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Construction Income</Name>
+<FullName>Construction Income</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40100</AccountNumber>
+<Desc>Construction Income</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>664219.55</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007A-1197778194</ListID>
+<TimeCreated>2007-12-15T23:09:54-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Design Income</Name>
+<FullName>Construction Income:Design Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40110</AccountNumber>
+<Balance>40129.25</Balance>
+<TotalBalance>40129.25</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000078-1197768793</ListID>
+<TimeCreated>2007-12-15T20:33:13-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Equipment Rental Income</Name>
+<FullName>Construction Income:Equipment Rental Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40120</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>190000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Labor Income</Name>
+<FullName>Construction Income:Labor Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40130</AccountNumber>
+<Balance>235305.50</Balance>
+<TotalBalance>235305.50</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>1A0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Materials Income</Name>
+<FullName>Construction Income:Materials Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40140</AccountNumber>
+<Balance>176401.54</Balance>
+<TotalBalance>176401.54</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>1C0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Subcontracted Labor Income</Name>
+<FullName>Construction Income:Subcontracted Labor Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40150</AccountNumber>
+<Balance>212431.61</Balance>
+<TotalBalance>212431.61</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>180000-933270541</ListID>
+<TimeCreated>1999-07-29T13:49:01-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Less Discounts given</Name>
+<FullName>Construction Income:Less Discounts given</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>170000-933270541</ListID>
+<FullName>Construction Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40199</AccountNumber>
+<Balance>-48.35</Balance>
+<TotalBalance>-48.35</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000080-1197742024</ListID>
+<TimeCreated>2007-12-15T13:07:04-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Reimbursement Income</Name>
+<FullName>Reimbursement Income</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40500</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>3974.80</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>5D0000-1197757267</ListID>
+<TimeCreated>2007-12-15T17:21:07-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Mileage Income</Name>
+<FullName>Reimbursement Income:Mileage Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>80000080-1197742024</ListID>
+<FullName>Reimbursement Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40510</AccountNumber>
+<Desc>Account for reimbursable mile</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000079-1197768854</ListID>
+<TimeCreated>2007-12-15T20:34:14-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Permit Reimbursement Income</Name>
+<FullName>Reimbursement Income:Permit Reimbursement Income</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>80000080-1197742024</ListID>
+<FullName>Reimbursement Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40520</AccountNumber>
+<Balance>3078.75</Balance>
+<TotalBalance>3078.75</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000077-1197768767</ListID>
+<TimeCreated>2007-12-15T20:32:47-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Reimbursed Freight &amp; Delivery</Name>
+<FullName>Reimbursement Income:Reimbursed Freight &amp; Delivery</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>80000080-1197742024</ListID>
+<FullName>Reimbursement Income</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Income</AccountType>
+<AccountNumber>40530</AccountNumber>
+<Balance>896.05</Balance>
+<TotalBalance>896.05</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>1E0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Cost of Goods Sold</Name>
+<FullName>Cost of Goods Sold</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<SpecialAccountType>CostOfGoodsSold</SpecialAccountType>
+<AccountNumber>50100</AccountNumber>
+<Desc>QuickBooks Automatically Increases the balance in this account when you use inventory items on invoices or sales receipts.</Desc>
+<Balance>23423.15</Balance>
+<TotalBalance>23423.15</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>300000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Job Expenses</Name>
+<FullName>Job Expenses</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54000</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>231278.33</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>240000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Bond Expense</Name>
+<FullName>Job Expenses:Bond Expense</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54100</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>310000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Equipment Rental</Name>
+<FullName>Job Expenses:Equipment Rental</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54200</AccountNumber>
+<Desc>Equipment Rental</Desc>
+<Balance>1850.00</Balance>
+<TotalBalance>1850.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>320000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Job Materials</Name>
+<FullName>Job Expenses:Job Materials</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54300</AccountNumber>
+<Desc>Job Materials</Desc>
+<Balance>111305.09</Balance>
+<TotalBalance>111305.09</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>330000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Permits and Licenses</Name>
+<FullName>Job Expenses:Permits and Licenses</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54400</AccountNumber>
+<Desc>Licenses</Desc>
+<Balance>925.00</Balance>
+<TotalBalance>925.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>340000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Subcontractors</Name>
+<FullName>Job Expenses:Subcontractors</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54500</AccountNumber>
+<Desc>Subcontractors Expense</Desc>
+<Balance>116567.95</Balance>
+<TotalBalance>116567.95</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>280000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Freight &amp; Delivery</Name>
+<FullName>Job Expenses:Freight &amp; Delivery</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54520</AccountNumber>
+<Desc>Freight and Delivery</Desc>
+<Balance>832.10</Balance>
+<TotalBalance>832.10</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007D-1197698607</ListID>
+<TimeCreated>2007-12-15T01:03:27-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Less Discounts Taken</Name>
+<FullName>Job Expenses:Less Discounts Taken</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>300000-933270542</ListID>
+<FullName>Job Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>CostOfGoodsSold</AccountType>
+<AccountNumber>54599</AccountNumber>
+<Balance>-201.81</Balance>
+<TotalBalance>-201.81</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>1F0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Automobile</Name>
+<FullName>Automobile</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60100</AccountNumber>
+<Desc>Automobile</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>13960.18</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>200000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Fuel</Name>
+<FullName>Automobile:Fuel</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>1F0000-933270542</ListID>
+<FullName>Automobile</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60110</AccountNumber>
+<Desc>Fuel Expense</Desc>
+<Balance>3303.70</Balance>
+<TotalBalance>3303.70</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>580000-1071498064</ListID>
+<TimeCreated>2003-12-15T09:21:04-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Insurance</Name>
+<FullName>Automobile:Insurance</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>1F0000-933270542</ListID>
+<FullName>Automobile</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60120</AccountNumber>
+<Desc>Business Truck Policies</Desc>
+<Balance>5700.48</Balance>
+<TotalBalance>5700.48</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>210000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Repairs and Maintenance</Name>
+<FullName>Automobile:Repairs and Maintenance</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>1F0000-933270542</ListID>
+<FullName>Automobile</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60130</AccountNumber>
+<Balance>4956.00</Balance>
+<TotalBalance>4956.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>220000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Bad debt</Name>
+<FullName>Bad debt</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60300</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>230000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Bank Service Charges</Name>
+<FullName>Bank Service Charges</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60600</AccountNumber>
+<Desc>Bank Service Charges</Desc>
+<Balance>275.00</Balance>
+<TotalBalance>275.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>250000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Depreciation Expense</Name>
+<FullName>Depreciation Expense</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>60900</AccountNumber>
+<Desc>Depreciation Expense</Desc>
+<Balance>70140.72</Balance>
+<TotalBalance>70140.72</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>260000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Dues and Subscriptions</Name>
+<FullName>Dues and Subscriptions</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>61200</AccountNumber>
+<Desc>Dues and Subscriptions</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>270000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Union Dues</Name>
+<FullName>Union Dues</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>61500</AccountNumber>
+<Desc>Union Dues</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>290000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Insurance</Name>
+<FullName>Insurance</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62100</AccountNumber>
+<Desc>Insurance</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>29118.07</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2A0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Disability Insurance</Name>
+<FullName>Insurance:Disability Insurance</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>290000-933270542</ListID>
+<FullName>Insurance</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62110</AccountNumber>
+<Desc>Disability Insurance</Desc>
+<Balance>1182.06</Balance>
+<TotalBalance>1182.06</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2B0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Liability Insurance</Name>
+<FullName>Insurance:Liability Insurance</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>290000-933270542</ListID>
+<FullName>Insurance</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62120</AccountNumber>
+<Desc>Liability Insurance</Desc>
+<Balance>10978.94</Balance>
+<TotalBalance>10978.94</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2C0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Work Comp</Name>
+<FullName>Insurance:Work Comp</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>290000-933270542</ListID>
+<FullName>Insurance</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62130</AccountNumber>
+<Desc>Workman&apos;s Compensation</Desc>
+<Balance>16957.07</Balance>
+<TotalBalance>16957.07</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007B-1197781139</ListID>
+<TimeCreated>2007-12-15T23:58:59-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Less Employee Portion - Health</Name>
+<FullName>Insurance:Less Employee Portion - Health</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>290000-933270542</ListID>
+<FullName>Insurance</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62199</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2D0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Interest Expense</Name>
+<FullName>Interest Expense</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62400</AccountNumber>
+<Desc>Interest Expense</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>6701.13</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2E0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Finance Charge</Name>
+<FullName>Interest Expense:Finance Charge</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>2D0000-933270542</ListID>
+<FullName>Interest Expense</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62410</AccountNumber>
+<Desc>Finance Charge</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>2F0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Loan Interest</Name>
+<FullName>Interest Expense:Loan Interest</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>2D0000-933270542</ListID>
+<FullName>Interest Expense</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62420</AccountNumber>
+<Desc>Loan Interest Expense</Desc>
+<Balance>6701.13</Balance>
+<TotalBalance>6701.13</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>540002-1071527489</ListID>
+<TimeCreated>2003-12-15T17:31:29-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Payroll Expenses</Name>
+<FullName>Payroll Expenses</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<SpecialAccountType>PayrollExpenses</SpecialAccountType>
+<AccountNumber>62700</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>120347.21</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000069-1197715866</ListID>
+<TimeCreated>2007-12-15T05:51:06-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Gross Wages</Name>
+<FullName>Payroll Expenses:Gross Wages</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>540002-1071527489</ListID>
+<FullName>Payroll Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62710</AccountNumber>
+<Balance>110400.10</Balance>
+<TotalBalance>110400.10</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000070-1197716198</ListID>
+<TimeCreated>2007-12-15T05:56:38-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Payroll Taxes</Name>
+<FullName>Payroll Expenses:Payroll Taxes</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>540002-1071527489</ListID>
+<FullName>Payroll Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62720</AccountNumber>
+<Balance>8445.61</Balance>
+<TotalBalance>8445.61</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000006D-1197716113</ListID>
+<TimeCreated>2007-12-15T05:55:13-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>FUTA Expense</Name>
+<FullName>Payroll Expenses:FUTA Expense</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>540002-1071527489</ListID>
+<FullName>Payroll Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62730</AccountNumber>
+<Balance>268.00</Balance>
+<TotalBalance>268.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>80000074-1197716425</ListID>
+<TimeCreated>2007-12-15T06:00:25-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>SUTA Expense</Name>
+<FullName>Payroll Expenses:SUTA Expense</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>540002-1071527489</ListID>
+<FullName>Payroll Expenses</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>62740</AccountNumber>
+<Balance>1233.50</Balance>
+<TotalBalance>1233.50</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>360000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Office Supplies</Name>
+<FullName>Office Supplies</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63000</AccountNumber>
+<Desc>Office Supplies</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007F-1197738192</ListID>
+<TimeCreated>2007-12-15T12:03:12-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Postage</Name>
+<FullName>Postage</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63100</AccountNumber>
+<Balance>104.20</Balance>
+<TotalBalance>104.20</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>380000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Printing and Reproduction</Name>
+<FullName>Printing and Reproduction</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63300</AccountNumber>
+<Desc>Printing and Reproduction</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>390000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Professional Fees</Name>
+<FullName>Professional Fees</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63600</AccountNumber>
+<Desc>Professional Fees</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>500.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3A0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Accounting</Name>
+<FullName>Professional Fees:Accounting</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>390000-933270542</ListID>
+<FullName>Professional Fees</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63610</AccountNumber>
+<Desc>Accounting Fees</Desc>
+<Balance>500.00</Balance>
+<TotalBalance>500.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3B0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Legal Fees</Name>
+<FullName>Professional Fees:Legal Fees</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>390000-933270542</ListID>
+<FullName>Professional Fees</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63620</AccountNumber>
+<Desc>Legal Fees</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3C0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Rent</Name>
+<FullName>Rent</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>63900</AccountNumber>
+<Desc>Rent</Desc>
+<Balance>1200.00</Balance>
+<TotalBalance>1200.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3D0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Repairs</Name>
+<FullName>Repairs</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64200</AccountNumber>
+<Desc>Repairs and Maintenance</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>4039.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3E0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Building Repairs</Name>
+<FullName>Repairs:Building Repairs</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>3D0000-933270542</ListID>
+<FullName>Repairs</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64210</AccountNumber>
+<Desc>Building Repairs</Desc>
+<Balance>175.00</Balance>
+<TotalBalance>175.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>3F0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Computer Repairs</Name>
+<FullName>Repairs:Computer Repairs</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>3D0000-933270542</ListID>
+<FullName>Repairs</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64220</AccountNumber>
+<Desc>Computer Repairs</Desc>
+<Balance>714.00</Balance>
+<TotalBalance>714.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>400000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Equipment Repairs</Name>
+<FullName>Repairs:Equipment Repairs</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>3D0000-933270542</ListID>
+<FullName>Repairs</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64230</AccountNumber>
+<Desc>Equipment Repairs</Desc>
+<Balance>3150.00</Balance>
+<TotalBalance>3150.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>410000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Taxes</Name>
+<FullName>Taxes</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64500</AccountNumber>
+<Desc>Taxes</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>420000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Federal</Name>
+<FullName>Taxes:Federal</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>410000-933270542</ListID>
+<FullName>Taxes</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64510</AccountNumber>
+<Desc>Federal Taxes</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>450000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>State</Name>
+<FullName>Taxes:State</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>410000-933270542</ListID>
+<FullName>Taxes</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64520</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>440000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Property</Name>
+<FullName>Taxes:Property</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>410000-933270542</ListID>
+<FullName>Taxes</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64530</AccountNumber>
+<Desc>Property Taxes</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>430000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Local</Name>
+<FullName>Taxes:Local</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>410000-933270542</ListID>
+<FullName>Taxes</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64540</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>460000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Tools and Machinery</Name>
+<FullName>Tools and Machinery</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>64800</AccountNumber>
+<Desc>Tools and Machinery</Desc>
+<Balance>4278.59</Balance>
+<TotalBalance>4278.59</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>480000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Utilities</Name>
+<FullName>Utilities</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>65100</AccountNumber>
+<Desc>Utilities</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>6638.74</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>490000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Gas and Electric</Name>
+<FullName>Utilities:Gas and Electric</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>480000-933270542</ListID>
+<FullName>Utilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>65110</AccountNumber>
+<Desc>Gas and Electric</Desc>
+<Balance>3537.59</Balance>
+<TotalBalance>3537.59</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4A0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Telephone</Name>
+<FullName>Utilities:Telephone</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>480000-933270542</ListID>
+<FullName>Utilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>65120</AccountNumber>
+<Desc>Telephone</Desc>
+<Balance>2344.15</Balance>
+<TotalBalance>2344.15</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>350000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Miscellaneous</Name>
+<FullName>Miscellaneous</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>69000</AccountNumber>
+<Desc>Miscellaneous</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4D0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Other Income</Name>
+<FullName>Other Income</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherIncome</AccountType>
+<AccountNumber>70100</AccountNumber>
+<Desc>Other Income</Desc>
+<Balance>146.80</Balance>
+<TotalBalance>146.80</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4C0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Interest Income</Name>
+<FullName>Interest Income</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherIncome</AccountType>
+<AccountNumber>70200</AccountNumber>
+<Desc>Interest Income</Desc>
+<Balance>510.19</Balance>
+<TotalBalance>510.19</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4E0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Other Expenses</Name>
+<FullName>Other Expenses</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>OtherExpense</AccountType>
+<AccountNumber>80100</AccountNumber>
+<Desc>Other Expenses</Desc>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>500000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Purchase Orders</Name>
+<FullName>Purchase Orders</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>NonPosting</AccountType>
+<SpecialAccountType>PurchaseOrders</SpecialAccountType>
+<AccountNumber>90100</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>510002-934306792</ListID>
+<TimeCreated>1999-08-10T13:39:52-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Estimates</Name>
+<FullName>Estimates</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>NonPosting</AccountType>
+<SpecialAccountType>Estimates</SpecialAccountType>
+<AccountNumber>90200</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>5A0000-1071512691</ListID>
+<TimeCreated>2003-12-15T13:24:51-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Sales Orders</Name>
+<FullName>Sales Orders</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>NonPosting</AccountType>
+<SpecialAccountType>SalesOrders</SpecialAccountType>
+<AccountNumber>90300</AccountNumber>
+<Balance>0.00</Balance>
+<TotalBalance>0.00</TotalBalance>
+<CashFlowClassification>NotApplicable</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>4B0000-933270542</ListID>
+<TimeCreated>1999-07-29T13:49:02-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>Water</Name>
+<FullName>Utilities:Water</FullName>
+<IsActive>true</IsActive>
+<ParentRef>
+<ListID>480000-933270542</ListID>
+<FullName>Utilities</FullName>
+</ParentRef>
+<Sublevel>1</Sublevel>
+<AccountType>Expense</AccountType>
+<AccountNumber>65130</AccountNumber>
+<Desc>Water</Desc>
+<Balance>757.00</Balance>
+<TotalBalance>757.00</TotalBalance>
+<CashFlowClassification>None</CashFlowClassification>
+</AccountRet>
+</AccountQueryRs>
+</QBXMLMsgsRs>
+</QBXML>

@@ -157,8 +157,11 @@ class Ticket(TimeStampedModel):
 
     def get_completion_status(self):
         return int(
-            self.tasks.filter(batch_status=Task.BatchStatus.BATCHED).count()
-            / self.tasks.all().count()
+            (
+                self.tasks.filter(batch_status=Task.BatchStatus.BATCHED).count()
+                / self.tasks.all().count()
+            )
+            * 100
         )
 
     def __str__(self):
@@ -204,6 +207,7 @@ class Task(TimeStampedModel):
     )
     model = models.CharField(max_length=90)
     ticket = models.ForeignKey(Ticket, related_name="tasks", on_delete=models.CASCADE)
+
     model_instance = models.ForeignKey(
         "BaseObjectMixin", null=True, on_delete=models.CASCADE
     )
@@ -218,71 +222,42 @@ class Task(TimeStampedModel):
         return model
 
     def get_request(self):
-        "An instance of task.."
-        qbxml = ""
+        "Get the instance task request; or related model task query"
         if self.model_instance:
-            pass
-        # if self.method == self.TaskMethod.GET:
-        #     qbxml = self.get_model().get()
-        # elif self.ticket_id.method == self.ticket_id.TicketMethod.POST:
-        #     qbxml = self.post()
-        # else:
-        #     qbxml = self.patch()
-        qbxml = self.get_model()().request(self.method)
-        return qbxml
+            return (
+                self.get_model()
+                .objects.get(id=self.model_instance.id)
+                .request(self.method)
+            )
+        return self.get_model()().request(self.method)
 
     def process_response(self, *args, **kwargs):
         "An instance of a task"
-
         if self.model_instance:
-            pass
+            self.get_model().objects.get(id=self.model_instance.id).process(
+                self.method, *args, **kwargs
+            )
         else:
             self.get_model()().process(self.method, *args, **kwargs)
-            self.batch_status = Task.BatchStatus.BATCHED
-            self.batch_id = self.ticket.batch_id
-            self.save()
+
+        self.batch_status = Task.BatchStatus.BATCHED
+        self.batch_id = self.ticket.batch_id
+        self.save()
 
 
 class BaseObjectMixin(TimeStampedModel):
     "Base object mixing that associated dependent models with their tickets"
 
     batch_id = models.CharField(max_length=60, blank=True, null=True)
-    # task = models.ForeignKey(, related_name='task', blank=True, null=True, on_delete=models.SET_NULL)
+    # task = models.ForeignKey(Task, related_name='task', blank=True, null=True, on_delete=models.SET_NULL)
 
     # Quickbooks Fields: if the model creates or modifies a QB transaction sync the two
-    qb_list_id = models.CharField(max_length=120, blank=True, null=True)
-    qb_time_created = models.DateTimeField(blank=True, null=True)
-    qb_time_modified = models.DateTimeField(blank=True, null=True)
+    qbwc_list_id = models.CharField(max_length=120, blank=True, null=True)
+    qbwc_time_created = models.DateTimeField(blank=True, null=True)
+    qbwc_time_modified = models.DateTimeField(blank=True, null=True)
 
     def request(self, method, *args, **kwargs):
         raise NotImplemented
 
     def process(self, method, *args, **kwargs):
-        raise NotImplemented
-
-    def get():
-        raise NotImplemented
-
-    def post():
-        raise NotImplemented
-
-    def patch():
-        raise NotImplemented
-
-    def void():
-        raise NotImplemented
-
-    def delete():
-        raise NotImplemented
-
-    def process_get():
-        raise NotImplemented
-
-    def process_post():
-        raise NotImplemented
-
-    def process_patch():
-        raise NotImplemented
-
-    def process_delete():
         raise NotImplemented

@@ -1,30 +1,14 @@
 import logging
 
-from datetime import datetime
-from lxml import etree
-from uuid import uuid4
-
 from django.shortcuts import render
-from django.contrib.auth import get_user_model
-from django.conf import settings
-
 from spyne.decorator import rpc, srpc
 from spyne.model.complex import Array, Unicode
 from spyne.model.primitive import Integer, String
 from spyne.service import ServiceBase
 
-# Error handling:
-# - Return an empty string in the sendRequestXML
-# - Return a negative number in the receiveResponseXML
-# - Both will call getLastError()
-
-# from qbwc.objects import process_response, process_query_response
 from qbwc.app_settings import QBWC_CODES, QBWC_VERSION
-from qbwc.models import (
-    ServiceAccount,
-    Ticket,
-    Task,
-)
+
+from qbwc.models import ServiceAccount, Ticket
 
 logger = logging.getLogger("django")
 
@@ -64,15 +48,11 @@ class QuickBooksService(ServiceBase):
                 logger.info("No tickets in queue...")
                 return [QBWC_CODES.NONE, QBWC_CODES.NONE]
 
-            # return [QBWC_CODES.NONE, QBWC_CODES.NONE]
-
         except Exception as e:
             logger.error(f"Invalid user: {e}")
             return [QBWC_CODES.INVALID_USER, QBWC_CODES.INVALID_USER]
 
-    @srpc(
-        Unicode, Unicode, Unicode, Unicode, Integer, Integer, _returns=String
-    )  # Unicode, Unicode, Unicode,
+    @srpc(Unicode, Unicode, Unicode, Unicode, Integer, Integer, _returns=String)
     def sendRequestXML(
         ticket,
         strHCPResponse,
@@ -81,13 +61,32 @@ class QuickBooksService(ServiceBase):
         qbXMLMajorVers,
         qbXMLMinorVers,
     ):
+        """
+        Send QBXML to the QBWC.
+
+        Args:
+            ticket (_type_): _description_
+            strHCPResponse (_type_): _description_
+            strCompanyFileName (_type_): _description_
+            qbXMLCountry (_type_): _description_
+            qbXMLMajorVers (_type_): _description_
+            qbXMLMinorVers (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         logger.info("sendRequestXML() has been called")
         logger.info(f"ticket: {ticket}")
+        logger.info(f"strHCPResponse {strHCPResponse}")
         logger.info(f"strCompanyFileName {strCompanyFileName}")
 
         ticket = Ticket.objects.get(ticket=ticket)
-        work = ticket.get_task()
-        qbxml = work.get_request()
+        try:
+            work = ticket.get_task()
+            qbxml = work.get_request()
+        except Exception as e:
+            logger.error(f"Error processing request {ticket}")
+            return -500
         logger.info(f"Processing ticket: {ticket}")
         logger.info(f"Sending request: {qbxml}")
 
@@ -107,7 +106,6 @@ class QuickBooksService(ServiceBase):
         @return (int) Positive integer 100 for completed work, and less than 100 to move to the next ticket.
             Needs to be handled by the session manager.
         """
-
         logger.info("receiveResponseXML()")
         logger.info(f"ticket={ticket}")
         logger.info(f"response={response}")
@@ -119,94 +117,24 @@ class QuickBooksService(ServiceBase):
         if len(hresult) > 0:
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
-            # triggers lastErrror() callback
             return_value = -101
+
         else:
             ticket = Ticket.objects.get(ticket=ticket)
-            work = ticket.get_task()
-            work.process_response(response, message)
+            task = ticket.get_task()
+
+            try:
+                task.process_response(response, message)
+            except Exception as e:
+                logger.error(f"Failed to process response: {e}")
+                return -1
+
             return_value = ticket.get_completion_status()
 
             if return_value == 100:
                 ticket.success()
+
         return return_value
-
-        # current_ticket = TicketQueue.objects.get(ticket=ticket)
-        # model = current_ticket.get_model()
-
-    #         try:
-    #             # Process the response from QuickBooks - should this be model dependent?
-    #             # response_code = process_response(response).get("statusSeverity")
-    #             qb_response = process_query_response(response)
-
-    #         except Exception as e:
-    #             logger.error(str(e))
-    #             current_ticket.status = TicketQueue.TicketStatus.FAILED
-    #             current_ticket.save()
-    #             raise KeyError("Error processing response from QB")
-
-    #         if current_ticket.method == current_ticket.TicketMethod.GET:
-    #             try:
-    #                 # Assumes GET method is a single round trip...
-    #                 logger.debug("Processing GET query response")
-
-    #                 model.process_get(qb_response, ticket)
-    #                 current_ticket.status = current_ticket.TicketStatus.SUCCESS
-    #                 current_ticket.save()
-
-    #             except Exception as e:
-    #                 logger.error(str(e))
-    #                 current_ticket.status = current_ticket.TicketStatus.FAILED
-    #                 current_ticket.save()
-    #                 raise KeyError(f"Error processing GET: {current_ticket.ticket}")
-
-    #         elif current_ticket.method == current_ticket.TicketMethod.POST:
-    #             try:
-    #                 logger.debug("Processing POST query response")
-    #                 # Errors get handled in processing function and bubble to { getLastError() }
-
-    #                 model.process_post(qb_response, ticket)
-
-    #                 # Move this method to the ticket...
-    #                 # current_ticket.objects.filter(ticket__batch_status )
-    #                 if model.process.check_for_work(current_ticket):
-    #                     # if model.process.check_for_work(ticket):
-    #                     logger.debug("More work to do")
-    #                     return 90
-
-    #                 else:
-    #                     logger.debug("Work completed")
-    #                     current_ticket.status = current_ticket.TicketStatus.SUCCESS
-    #                     current_ticket.save()
-    #                     return 100
-
-    #             except Exception as e:
-    #                 # Don't try to handle exception end the operation
-    #                 logger.error(str(e))
-    #                 # breakpoint()
-    #                 current_ticket.status = current_ticket.TicketStatus.ERROR
-    #                 current_ticket.save()
-    #                 raise KeyError(f"Error processing POST: {current_ticket.ticket}")
-    #                 # return 100
-    #         else:
-    #             try:
-    #                 logger.debug("Processing PATCH query response")
-
-    #             except Exception as e:
-    #                 logger.error(str(e))
-    #                 current_ticket.status = current_ticket.TicketStatus.ERROR
-    #                 current_ticket.save()
-    #                 raise KeyError(
-    #                     f"Error processing patch request: {current_ticket.ticket}"
-    #                 )
-
-    #         if hresult is not None:  # response_code == "Error" or
-    #             # Errors should be logged and continued upon?
-    #             pass
-    #         else:
-    #             pass
-
-    #         return 100
 
     @srpc(Unicode, _returns=Unicode)
     def serverVersion(strVersion, *args):
@@ -243,37 +171,26 @@ class QuickBooksService(ServiceBase):
             ctx (DjangoHttpMethodContext): spyne processed request wasdl
             ticket (str): ticket that is completed?
         """
-        # breakpoint()
         logger.info(f"closeConnection(): ticket={ticket}")
-        # return QBWC_CODES.CONN_CLOSE_OK
         return f"Completed Operation: {ticket}"
 
-    #     @srpc(Unicode, Unicode, Unicode, _returns=Unicode)
-    #     def connectionError(ticket, hresult, message):
-    #         """
-    #         Tell the web service about an error the web connector encountered in its attempt to connect to QuickBooks
-    #         or QuickBooks POS
-    #         @param ticket the ticket from web connector supplied by web service during call to authenticate method
-    #         @param hresult the HRESULT (in HEX) from the exception thrown by the request processor
-    #         @param message The error message that accompanies the HRESULT from the request processor
-    #         @return string value "done" to indicate web service is finished or the full path of the different company for
-    #         retrying _set_connection.
-    #         """
-    #         # log = MessageLog(
-    #         #     type = 'error',
-    #         #     hresult = hresult,
-    #         #     message = str(logger.debug(f'connectionError(): ticket={ticket}, hresult={hresult}, message={message}'))
-    #         # )
-    #         # log.save()
-
-    #         logger.debug(
-    #             f"connectionError(): ticket={ticket}, hresult={hresult}, message={message}"
-    #         )
-
-    #         current_ticket = TicketQueue.objects.get(ticket=ticket)
-    #         current_ticket.status = TicketQueue.TicketStatus.ERROR
-
-    #         return QBWC_CODES.CONN_CLOSE_ERROR
+    @srpc(Unicode, Unicode, Unicode, _returns=Unicode)
+    def connectionError(ticket, hresult, message):
+        """
+        Tell the web service about an error the web connector encountered in its attempt to connect to QuickBooks
+        or QuickBooks POS
+        @param ticket the ticket from web connector supplied by web service during call to authenticate method
+        @param hresult the HRESULT (in HEX) from the exception thrown by the request processor
+        @param message The error message that accompanies the HRESULT from the request processor
+        @return string value "done" to indicate web service is finished or the full path of the different company for
+        retrying _set_connection.
+        """
+        logger.error(
+            f"connectionError(): ticket={ticket}, hresult={hresult}, message={message}"
+        )
+        ticket = Ticket.objects.get(ticket=ticket)
+        ticket.failed()
+        return QBWC_CODES.CONN_CLOSE_ERROR
 
     @srpc(Unicode, _returns=Unicode)
     def getLastError(ticket):
@@ -286,6 +203,8 @@ class QuickBooksService(ServiceBase):
         connector’s Status column.
         """
         logger.error(f"getLastError(): ticket={ticket}")
+        ticket = Ticket.objects.get(ticket=ticket)
+        ticket.failed()
         return f"Error processing ticket: {ticket}"
 
 
