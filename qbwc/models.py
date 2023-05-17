@@ -1,4 +1,3 @@
-from datetime import datetime
 from uuid import uuid4
 
 from django.db import models
@@ -118,7 +117,9 @@ class Ticket(TimeStampedModel):
         SUCCESS = ("201", "Success")
         FAILED = ("500", "Failed")
 
-    batch_id = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
+    batch_id = models.CharField(
+        max_length=60, default=uuid4, editable=False, unique=True
+    )
     ticket = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
     status = models.CharField(
         max_length=3, choices=TicketStatus.choices, default=TicketStatus.CREATED
@@ -172,15 +173,36 @@ class Task(TimeStampedModel):
     "Wrapper around app transactions that to affect change or action in QB"
 
     class TaskMethod(models.TextChoices):
-        GET = ("GET","GET",)
-        POST = ("POST","POST",)
-        PATCH = ("PATCH","PATCH",)
-        VOID = ("VOID","VOID",)
-        DELETE = ("DELETE","DELETE",)
+        GET = (
+            "GET",
+            "GET",
+        )
+        POST = (
+            "POST",
+            "POST",
+        )
+        PATCH = (
+            "PATCH",
+            "PATCH",
+        )
+        VOID = (
+            "VOID",
+            "VOID",
+        )
+        DELETE = (
+            "DELETE",
+            "DELETE",
+        )
 
     class BatchStatus(models.TextChoices):
-        BATCHED = ("BATCHED", "BATCHED",)
-        UN_BATCHED = ("UN_BATCHED", "UN_BATCHED",)
+        BATCHED = (
+            "BATCHED",
+            "BATCHED",
+        )
+        UN_BATCHED = (
+            "UN_BATCHED",
+            "UN_BATCHED",
+        )
 
     batch_status = models.CharField(
         max_length=20, choices=BatchStatus.choices, default=BatchStatus.UN_BATCHED
@@ -243,13 +265,13 @@ class BaseObjectMixin(TimeStampedModel):
     qbwc_time_modified = models.DateTimeField(blank=True, null=True)
 
     def request(self, method, *args, **kwargs):
-        raise NotImplemented
+        raise NotImplementedError
 
     def process(self, method, *args, **kwargs):
-        raise NotImplemented
-    
+        raise NotImplementedError
+
     def get_str_id(self):
         return str(self.id)
-    
+
     class Meta:
         abstract = True

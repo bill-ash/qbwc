@@ -1,23 +1,24 @@
 from example.accounts.models import GlAccount
-from qbwc.models import Ticket, Task, ServiceAccount
+from qbwc.models import Ticket, Task
 from uuid import uuid4
 
-
 import pytest
+
 
 @pytest.mark.skip(reason="Tests not implemented yet")
 def test_something():
     pass
 
+
 # Create a generic service account..
-service = ServiceAccount()
-service.app_name = "QBWC Data Sync"
-service.app_url = "http://localhost:8000"
-service.app_description = "Django QuickBooks WebConnector"
-service.qbid = "511829ea-f359-43cb-a885-844ebd8aabb1"
-service.app_owner_id = "63293baf-fc64-4747-afa4-3fb5861c9f48"
-service.app_file_id = "5d7eef11-6f07-4bc6-9c01-b911a6597f96"
-service.save()
+# service = ServiceAccount()
+# service.app_name = "QBWC Data Sync"
+# service.app_url = "http://localhost:8000"
+# service.app_description = "Django QuickBooks WebConnector"
+# service.qbid = "511829ea-f359-43cb-a885-844ebd8aabb1"
+# service.app_owner_id = "63293baf-fc64-4747-afa4-3fb5861c9f48"
+# service.app_file_id = "5d7eef11-6f07-4bc6-9c01-b911a6597f96"
+# service.save()
 
 # ServiceAccount.objects.all()
 
@@ -52,30 +53,53 @@ Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED).all()
 
 
 # Create a new account in QB
-a = GlAccount()
-a.name = "New Account Name"
-a.full_name = "New Account Full Name"
-a.description = "Hello, World!"
-a.account_type = "OtherCurrentAsset"
-a.account_number = str(uuid4())[:4]
-a.save()
+def create_account():
+    a = GlAccount()
+    account_name = "New Account Name"
+    a.name = account_name
+    a.full_name = "New Account Full Name"
+    a.description = "Hello, World!"
+    a.account_type = "OtherCurrentAsset"
+    a.account_number = str(uuid4())[:4]
+    a.save()
+
+    # Create a new ticket
+    ticket = Ticket()
+    ticket.status = ticket.TicketStatus.APPROVED
+    ticket.batch_id = str(uuid4())[:8]
+
+    # Wrapper for new account creation
+    task = Task()
+    task.model = a._meta.model_name
+    task.model_instance = a.get_str_id()
+    task.method = task.TaskMethod.POST
+    task.ticket = ticket
+    ticket.save()
+    task.save()
 
 
-# Create a new ticket
-ticket = Ticket()
-ticket.status = ticket.TicketStatus.APPROVED
-ticket.batch_id = str(uuid4())[:8]
+def delete_account():
+    account_name = "New Account Name"
+
+    # Delete user created account
+    account = GlAccount.objects.filter(name=account_name, mark_for_delete=False).last()
+    account.mark_for_delete = True
+    account.save()
+
+    ticket = Ticket()
+    ticket.status = ticket.TicketStatus.APPROVED
+    ticket.batch_id = str(uuid4())[:8]
+    ticket.save()
+    task = Task()
+    task.model = account._meta.model_name
+    task.model_instance = account.get_str_id()
+    task.method = Task.TaskMethod.DELETE
+    task.ticket = ticket
+    task.save()
 
 
-# Wrapper for new account creation
-task = Task()
-task.model = a._meta.model_name
-task.model_instance = a.get_str_id()
-task.method = task.TaskMethod.POST
-task.ticket = ticket
-ticket.save()
-task.save()
-
+create_account()
+delete_account()
 
 # Check the approved tickets
 Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED)
@@ -85,3 +109,5 @@ work = account_ticket.get_task()
 work.model_instance
 work.get_request()
 
+account_name = "New Account Name"
+GlAccount.objects.filter(name=account_name).delete()

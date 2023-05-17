@@ -84,7 +84,7 @@ class QuickBooksService(ServiceBase):
         try:
             work = ticket.get_task()
             qbxml = work.get_request()
-        except Exception as e:
+        except Exception:
             logger.error(f"Error processing request {ticket}")
             return -500
         logger.info(f"Processing ticket: {ticket}")
