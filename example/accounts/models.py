@@ -6,7 +6,7 @@ from qbwc.parser import string_to_xml, parse_query_element
 
 
 class GlAccount(BaseObjectMixin):
-    class GLAccountType(models.TextChoices):
+    class AccountType(models.TextChoices):
         AP = (
             "AccountsPayable",
             "AccountsPayable",
@@ -73,7 +73,7 @@ class GlAccount(BaseObjectMixin):
     name = models.CharField(max_length=120, unique=True)
     full_name = models.CharField(max_length=120, unique=True)
     description = models.TextField(blank=True, null=True)
-    account_type = models.CharField(max_length=50, choices=GLAccountType.choices)
+    account_type = models.CharField(max_length=50, choices=AccountType.choices)
     account_number = models.CharField(max_length=40, unique=False)
     mark_for_delete = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -118,7 +118,14 @@ class GlAccount(BaseObjectMixin):
                 </QBXML>
                 """
         if method == Task.TaskMethod.DELETE:
-            # <!-- ListDelType may have one of the following values: Account, BillingRate, Class, Currency, Customer, CustomerMsg, CustomerType, DateDrivenTerms, Employee, InventorySite, ItemDiscount, ItemFixedAsset, ItemGroup, ItemInventory, ItemInventoryAssembly, ItemNonInventory, ItemOtherCharge, ItemPayment, ItemSalesTax, ItemSalesTaxGroup, ItemService, ItemSubtotal, JobType, OtherName, PaymentMethod, PayrollItemNonWage, PayrollItemWage, PriceLevel, SalesRep, SalesTaxCode, ShipMethod, StandardTerms, ToDo, UnitOfMeasureSet, Vehicle, Vendor, VendorType, WorkersCompCode -->
+            # <!--
+            # ListDelType may have one of the following values: Account, BillingRate, Class, Currency,
+            # Customer, CustomerMsg, CustomerType, DateDrivenTerms, Employee, InventorySite, ItemDiscount,
+            # ItemFixedAsset, ItemGroup, ItemInventory, ItemInventoryAssembly, ItemNonInventory, ItemOtherCharge,
+            # ItemPayment, ItemSalesTax, ItemSalesTaxGroup, ItemService, ItemSubtotal, JobType, OtherName,
+            # PaymentMethod, PayrollItemNonWage, PayrollItemWage, PriceLevel, SalesRep, SalesTaxCode, ShipMethod,
+            # StandardTerms, ToDo, UnitOfMeasureSet, Vehicle, Vendor, VendorType, WorkersCompCode
+            # -->
             return f"""
             <?qbxml version="16.0"?>
             <QBXML>

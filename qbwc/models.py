@@ -273,5 +273,8 @@ class BaseObjectMixin(TimeStampedModel):
     def get_str_id(self):
         return str(self.id)
 
+    def get_model_name(self):
+        return self._meta.object_name
+
     class Meta:
         abstract = True
