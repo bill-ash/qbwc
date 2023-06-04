@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import GlAccount, OtherNameList
+from .models import GlAccount
 
-admin.site.register(OtherNameList)
 admin.site.register(GlAccount)

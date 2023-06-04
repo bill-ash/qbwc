@@ -274,4 +274,3 @@ class BaseObjectMixin(TimeStampedModel):
 
     class Meta:
         abstract = True
-

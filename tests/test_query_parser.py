@@ -61,17 +61,14 @@ success = """<?xml version="1.0" ?>
         </QBXML>
 """
 
+
 def test_parse_error():
     t = string_to_xml(error)
-    assert isinstance(check_status(t), list)
-    assert check_status(t)[0] == "Error"
-    
+    assert isinstance(check_status(t), str)
+    assert check_status(t) == "Error"
+
 
 def test_parse_success():
     s = string_to_xml(success)
-    assert isinstance(check_status(s), list)
-    assert check_status(s)[0] == "Info"
-    
-    
-    
-    
+    assert isinstance(check_status(s), str)
+    assert check_status(s) == "Info"

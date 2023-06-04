@@ -1,8 +1,9 @@
 from django.db import models
 
 from qbwc.models import BaseObjectMixin, Task
-from qbwc.utils import parse_time_stamp, string_escape_decorator
-from qbwc.parser import string_to_xml, parse_query_element
+from qbwc.decorators import string_escape_decorator
+from qbwc.parser import string_to_xml, parse_query_element, parse_time_stamp
+
 
 class GlAccount(BaseObjectMixin):
     class AccountType(models.TextChoices):
@@ -83,7 +84,7 @@ class GlAccount(BaseObjectMixin):
 
     # Limit which accounts are displayed in the application to choose from
     display = models.BooleanField(default=True)
-    
+
     @string_escape_decorator
     def request(self, method):
         """
@@ -152,9 +153,9 @@ class GlAccount(BaseObjectMixin):
                         account = parse_query_element(q)
                         GlAccount.objects.update_or_create(
                             # Account names must be unique
-                                qbwc_list_id=account["ListID"],
+                            qbwc_list_id=account["ListID"],
                             defaults={
-                                'name': account["Name"],
+                                "name": account["Name"],
                                 "full_name": account["FullName"],
                                 "description": account.get("Desc", ""),
                                 "account_type": account["AccountType"],
@@ -216,7 +217,3 @@ class GlAccount(BaseObjectMixin):
     class Meta:
         verbose_name = "GL Account"
         verbose_name_plural = "GL Accounts"
-
-
-class OtherNameList(BaseObjectMixin):
-    name = models.CharField(max_length=60)

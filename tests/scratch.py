@@ -51,7 +51,7 @@ Ticket.objects.filter(status=Ticket.TicketStatus.CREATED).all()
 Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED).all()
 
 
-# Create a new account 
+# Create a new account
 
 account_name = f"M<>lo's && World's {gen_random_number(2)}"
 
@@ -63,7 +63,7 @@ a.account_type = GlAccount.AccountType.OTHER_CURRENT_ASSET
 a.account_number = gen_random_number(7)
 a.save()
 
-a.request('POST')
+a.request("POST")
 
 # Create a new ticket
 ticket = Ticket()
@@ -79,7 +79,7 @@ task.ticket = ticket
 ticket.save()
 task.save()
 
-a.request('POST')
+a.request("POST")
 
 # Delete user created account
 # Deletes the account in QB and makes the account inactive in app

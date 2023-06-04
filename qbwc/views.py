@@ -12,6 +12,7 @@ from qbwc.models import ServiceAccount, Ticket
 
 logger = logging.getLogger("django")
 
+
 class QuickBooksService(ServiceBase):
     @srpc(Unicode, Unicode, _returns=Array(Unicode))
     def authenticate(strUserName, strPassword):
@@ -76,9 +77,9 @@ class QuickBooksService(ServiceBase):
         """
         logger.info("sendRequestXML() has been called")
         logger.info(f"ticket: {ticket}")
-        
+
         ticket = Ticket.objects.get(ticket=ticket)
-        
+
         try:
             work = ticket.get_task()
             qbxml = work.get_request()
@@ -94,7 +95,7 @@ class QuickBooksService(ServiceBase):
     def receiveResponseXML(ticket, response, hresult, message):
         """
         Returns the data response form the QuickBooks WebConnector.
-        
+
         Not all errors generate hex messages.
 
         Args:
@@ -111,9 +112,9 @@ class QuickBooksService(ServiceBase):
         logger.info(f"response={response}")
         logger.info(f"hresult={hresult}")
         logger.info(f"message={message}")
-        
-        return_value = 0 
-                       
+
+        return_value = 0
+
         try:
             str_response = string_to_xml(response)
             response_status = check_status(str_response)
@@ -122,8 +123,8 @@ class QuickBooksService(ServiceBase):
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
             return -101
-                
-        if len(hresult) > 0: 
+
+        if len(hresult) > 0:
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
             return -101
