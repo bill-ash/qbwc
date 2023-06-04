@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Demo applications
     "accounts",
     "customers",
+    "creditcards",
     "expenses",
     "qblists",
     "vendors",

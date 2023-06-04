@@ -5,6 +5,8 @@ from qbwc.models import BaseObjectMixin, Task
 from qbwc.parser import string_to_xml, parse_query_element, parse_time_stamp
 from qbwc.exceptions import QBXMLProcessingError, QBXMLRequestError
 
+from django.contrib.contenttypes.fields import GenericRelation
+# from creditcards.models import CreditCardCharge
 
 class Vendor(BaseObjectMixin):
     name = models.CharField(max_length=120, unique=True)
@@ -13,6 +15,11 @@ class Vendor(BaseObjectMixin):
     help_name = models.CharField(max_length=60, blank=True, null=True)
     help_description = models.TextField(blank=True, null=True)
     display = models.BooleanField(default=True)
+    
+    # charges = GenericRelation(CreditCardCharge, related_query_name="vendors")
+    
+
+    
     """Is the record viewable in app"""
 
     def request(self, method, *args, **kwargs):

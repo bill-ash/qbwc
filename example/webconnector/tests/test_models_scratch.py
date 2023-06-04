@@ -1,6 +1,8 @@
 """
-Reprovision an instance of example app for testing purposes
+Testing Module for workshopping models and methods
 """
+import pytest 
+
 
 from uuid import uuid4
 from qbwc.models import Ticket, Task
@@ -16,6 +18,10 @@ gen_random_number = lambda x: str(uuid4())[:x]
 
 # \\TODO: A vendor, other name, or account is written into the app; and a QB
 # sync replaces or overwrites the existing record
+
+pytestmark = pytest.mark.skip(reason="Skipping entire file")
+
+
 def wrap_task(model, ticket, method):
     task = Task()
     task.ticket = ticket
@@ -34,12 +40,12 @@ def init_ticket():
     return ticket
 
 
-
-
 from accounts.models import GlAccount
 from qblists.models import OtherNameList
 from vendors.models import Vendor
 from customers.models import Customer
+from creditcards.models import CreditCard
+
 
 # ServiceAccount.objects.all()
 # Ticket.objects.all().delete()
@@ -72,13 +78,13 @@ def sync_qb_accounts():
 
 
 # # The ticket will always have a task: reverse lookup the task by the ticket
-sync_qb_accounts()
+# sync_qb_accounts()
 
-# Iterate through tickets
-Ticket.objects.filter(status=Ticket.TicketStatus.FAILED).all()
-Ticket.objects.filter(status=Ticket.TicketStatus.SUCCESS).all()
-Ticket.objects.filter(status=Ticket.TicketStatus.CREATED).all()
-Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED).all()
+# # Iterate through tickets
+# Ticket.objects.filter(status=Ticket.TicketStatus.FAILED).all()
+# Ticket.objects.filter(status=Ticket.TicketStatus.SUCCESS).all()
+# Ticket.objects.filter(status=Ticket.TicketStatus.CREATED).all()
+# Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED).all()
 
 
 def create_account():
@@ -89,7 +95,7 @@ def create_account():
 
     a = GlAccount()
     a.name = f"M<>lo's && World's {gen_random_number(2)}"
-    a.full_name = f"New Accoun|,'\" \Full Name {gen_random_number(5)}"
+    a.full_name = f"New Accoun|, Full Name {gen_random_number(5)}"
     a.description = "Hello, World!"
     a.account_type = GlAccount.AccountType.OTHER_CURRENT_ASSET
     a.account_number = gen_random_number(7)
@@ -153,7 +159,7 @@ def sync_other_names():
     task.save()
 
 
-sync_other_names()
+# sync_other_names()
 
 
 def create_other_name():
@@ -173,7 +179,7 @@ def create_other_name():
         task.save()
 
 
-create_other_name()
+# create_other_name()
 
 
 def create_account_other_name():
@@ -199,7 +205,7 @@ def create_account_other_name():
     wrap_task(GlAccount(), ticket, Task.TaskMethod.GET)
 
 
-create_account_other_name()
+# create_account_other_name()
 
 
 def sync_vendors():
@@ -215,7 +221,7 @@ def sync_vendors():
     task.save()
 
 
-sync_vendors()
+# sync_vendors()
 
 
 def create_vendors():
@@ -232,13 +238,21 @@ def create_vendors():
     wrap_task(Vendor(), ticket, "GET")
 
 
-create_vendors()
-
+# create_vendors()
 
 
 def sync_customers():
     ticket = init_ticket()
     wrap_task(Customer(), ticket, "GET")
-    
-    
-sync_customers()
+
+
+# sync_customers()
+
+def sync_cards():
+    ticket = init_ticket()
+    wrap_task(CreditCard(), ticket, 'GET')
+
+# sync_cards()
+
+
+

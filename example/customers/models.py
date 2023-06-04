@@ -6,12 +6,12 @@ from qbwc.parser import string_to_xml, parse_table_elems, parse_time_stamp
 
 class Customer(BaseObjectMixin):
     """
-    Important: We highly recommend that you use the 
+    Important: We highly recommend that you use the
     IncludeRetElement tag in your CustomerQuery to
-    include any data you want but do NOT include the 
+    include any data you want but do NOT include the
     ShipAddress data in the Response, unless you need
     to get the shipping address for a particular customer.
-    Excluding the shipping address data will significantly 
+    Excluding the shipping address data will significantly
     improve the performance of the CustomerQuery.
     """
 
@@ -23,7 +23,7 @@ class Customer(BaseObjectMixin):
     display = models.BooleanField(default=True)
 
     def request(self, method, *args, **kwargs):
-        # Select specific elements to speed up queries using the <IncludeRetElement> tag 
+        # Select specific elements to speed up queries using the <IncludeRetElement> tag
         if method == Task.TaskMethod.GET:
             return """
                 <?qbxml version="16.0"?>
@@ -78,7 +78,7 @@ class Customer(BaseObjectMixin):
                 # filter for parent customers only
                 # Unset entity attributes will not be returned when syncing with QB
                 # Ensure sensible defaults are chosen for your application
-                if customer['Sublevel'] == '0':
+                if customer["Sublevel"] == "0":
                     Customer.objects.update_or_create(
                         qbwc_list_id=customer["ListID"],
                         defaults={
@@ -88,11 +88,14 @@ class Customer(BaseObjectMixin):
                             "company_name": customer.get("CompanyName", ""),
                             "first_name": customer.get("FirstName", ""),
                             "last_name": customer.get("LastName", ""),
-                            "qbwc_time_created": parse_time_stamp(customer["TimeCreated"]),
-                            "qbwc_time_modified": parse_time_stamp(customer["TimeModified"]),
+                            "qbwc_time_created": parse_time_stamp(
+                                customer["TimeCreated"]
+                            ),
+                            "qbwc_time_modified": parse_time_stamp(
+                                customer["TimeModified"]
+                            ),
                         },
                     )
-
 
     def __str__(self):
         return self.name

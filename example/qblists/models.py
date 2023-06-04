@@ -3,10 +3,13 @@ from qbwc.models import BaseObjectMixin, Task
 from qbwc.parser import string_to_xml, parse_query_element, parse_time_stamp
 from qbwc.decorators import string_escape_decorator
 
+from django.contrib.contenttypes.fields import GenericRelation
 
 class OtherNameList(BaseObjectMixin):
     name = models.CharField(max_length=60, unique=True)
-
+    # charges = GenericRelation(CreditCardCharge, related_query_name="othernames")
+    
+    
     @string_escape_decorator
     def request(self, method):
         """

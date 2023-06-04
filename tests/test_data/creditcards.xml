@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<QBXML>
+<QBXMLMsgsRs>
+<AccountQueryRs requestID="1" statusCode="0" statusSeverity="Info" statusMessage="Status OK">
+<AccountRet>
+<ListID>570000-1071509253</ListID>
+<TimeCreated>2003-12-15T12:27:33-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>QuickBooks Credit Card</Name>
+<FullName>QuickBooks Credit Card</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CreditCard</AccountType>
+<AccountNumber>20500</AccountNumber>
+<BankNumber>5555-4444-3333-4521</BankNumber>
+<Desc>QuickBooks Credit Card</Desc>
+<Balance>293.20</Balance>
+<TotalBalance>293.20</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+<AccountRet>
+<ListID>8000007E-1197732180</ListID>
+<TimeCreated>2007-12-15T10:23:00-05:00</TimeCreated>
+<TimeModified>2023-12-16T00:06:45-05:00</TimeModified>
+<EditSequence>1702703205</EditSequence>
+<Name>CalOil Credit Card</Name>
+<FullName>CalOil Credit Card</FullName>
+<IsActive>true</IsActive>
+<Sublevel>0</Sublevel>
+<AccountType>CreditCard</AccountType>
+<AccountNumber>20600</AccountNumber>
+<Balance>382.62</Balance>
+<TotalBalance>382.62</TotalBalance>
+<TaxLineInfoRet>
+<TaxLineID>1577</TaxLineID>
+<TaxLineName>B/S-Liabs/Eq.: Other current liabilities</TaxLineName>
+</TaxLineInfoRet>
+<CashFlowClassification>Operating</CashFlowClassification>
+</AccountRet>
+</AccountQueryRs>
+</QBXMLMsgsRs>
+</QBXML>

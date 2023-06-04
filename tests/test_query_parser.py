@@ -3,9 +3,8 @@ from qbwc.parser import (
     string_to_xml,
     parse_query_element,
     parse_table_elems,
-    check_status
+    check_status,
 )
-
 
 
 def read_test_xml(obj):
@@ -15,7 +14,7 @@ def read_test_xml(obj):
 
 
 def test_parser():
-    accounts = read_test_xml('accounts')
+    accounts = read_test_xml("accounts")
     root = string_to_xml(accounts)
     data_list = []
     for account_rs in root.iter("AccountQueryRs"):
@@ -25,16 +24,14 @@ def test_parser():
 
 
 def test_customer_parser():
-    customers = read_test_xml('customers')
+    customers = read_test_xml("customers")
     root = string_to_xml(customers)
     elems = parse_table_elems(root, "CustomerRet")
     assert len(elems) == 146
-    
-    # elems[10] 
-    # r = pd.json_normalize(elems) 
-    # r.to_clipboard()
-    
 
+    # elems[10]
+    # r = pd.json_normalize(elems)
+    # r.to_clipboard()
 
 
 error = """<?xml version="1.0" ?>
@@ -93,5 +90,3 @@ def test_parse_success():
     s = string_to_xml(success)
     assert isinstance(check_status(s), str)
     assert check_status(s) == "Info"
-
-
