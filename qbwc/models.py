@@ -1,10 +1,14 @@
+import logging 
 from uuid import uuid4
 
 from django.db import models
+from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.contenttypes.models import ContentType
+from qbwc.exceptions import QBXMLProcessingError
 
+logger = logging.getLogger(__name__)
 
 class TimeStampedModel(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
@@ -116,49 +120,66 @@ class Ticket(TimeStampedModel):
         SUCCESS = ("201", "Success")
         FAILED = ("500", "Failed")
 
+    ticket = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
+    
+    # User defined batch Id: submits records to QuickBooks
     batch_id = models.CharField(
         max_length=60, default=uuid4, editable=False, unique=True
     )
-    ticket = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
+        
     status = models.CharField(
         max_length=3, choices=TicketStatus.choices, default=TicketStatus.CREATED
     )
+    
     owner = models.ForeignKey(get_user_model(), null=True, on_delete=models.SET_NULL)
 
     objects = models.Manager()
     process = TicketManager()
 
-    def check_unbatched_tasks(self):
+    def check_task_queue(self):
         """Check the related entities (reverse fk lookup) for unbatched work"""
-        return self.tasks.filter(batch_status=Task.BatchStatus.UN_BATCHED).count() > 0
+        return self.tasks.filter(status=Task.TaskStatus.CREATED).count() > 0
 
     def get_task(self):
-        """Returns an instance of dependant task"""
+        """
+        Returns an instance of dependant task
+        FIFO: ordering may be important when grouping related tasks in a single Ticket
+            - tasks are executed in the order they are created
+        """
         return (
-            self.tasks.filter(batch_status=Task.BatchStatus.UN_BATCHED)
-            .order_by("-created_on")
+            self.tasks.filter(status=Task.TaskStatus.CREATED)
+            .order_by("created_on")
             .first()
         )
 
+    @property
     def processing(self):
         "View method: update ticket status to processing"
         self.status = Ticket.TicketStatus.PROCESSING
         self.save()
 
+    @property
     def success(self):
         "View method: update ticket status to success"
         self.status = Ticket.TicketStatus.SUCCESS
         self.save()
 
+    @property
     def failed(self):
         "View method: update ticket status to failed"
+        try:
+            failed_task = self.get_task()
+            failed_task.mark_failed
+        except Exception as e:
+            logger.error('Could not mark task failed')
+            
         self.status = Ticket.TicketStatus.FAILED
         self.save()
 
     def get_completion_status(self):
         return int(
             (
-                self.tasks.filter(batch_status=Task.BatchStatus.BATCHED).count()
+                self.tasks.filter(Q(status=Task.TaskStatus.SUCCESS) | Q(status=Task.TaskStatus.FAILED)).count()
                 / self.tasks.all().count()
             )
             * 100
@@ -166,7 +187,7 @@ class Ticket(TimeStampedModel):
 
     def __str__(self):
         return str(self.ticket)
-
+    
 
 class Task(TimeStampedModel):
     "Wrapper around app transactions that to affect change or action in QB"
@@ -193,27 +214,28 @@ class Task(TimeStampedModel):
             "DELETE",
         )
 
-    class BatchStatus(models.TextChoices):
-        BATCHED = (
-            "BATCHED",
-            "BATCHED",
+    class TaskStatus(models.TextChoices):
+        CREATED = (
+            "CREATED", "CREATED",
         )
-        UN_BATCHED = (
-            "UN_BATCHED",
-            "UN_BATCHED",
+        SUCCESS = (
+            "SUCCESS", "SUCCESS",
+        )
+        FAILED = (
+            "FAILED", "FAILED", 
         )
 
-    batch_status = models.CharField(
-        max_length=20, choices=BatchStatus.choices, default=BatchStatus.UN_BATCHED
+    status = models.CharField(
+        max_length=20, choices=TaskStatus.choices, default=TaskStatus.CREATED
     )
-    batch_id = models.CharField(max_length=60, null=True)
 
     method = models.CharField(
         max_length=6, choices=TaskMethod.choices, default=TaskMethod.GET
     )
-    model = models.CharField(max_length=90)
+    
     ticket = models.ForeignKey(Ticket, related_name="tasks", on_delete=models.CASCADE)
-
+    
+    model = models.CharField(max_length=90)
     model_instance = models.CharField(max_length=120, null=True, editable=False)
 
     def get_model(self):
@@ -224,6 +246,23 @@ class Task(TimeStampedModel):
         content_type = ContentType.objects.get(model=self.model.lower())
         model = content_type.model_class()
         return model
+    
+    def get_model_instance(self):
+        if self.model_instance:
+            model = self.get_model()
+            return model.objects.get(id=self.model_instance) 
+        return None
+    
+    @property
+    def mark_failed(self):
+        self.status = self.TaskStatus.FAILED
+        self.save()
+        
+    @property
+    def mark_success(self):
+        self.status = self.TaskStatus.SUCCESS
+        self.save()
+        
 
     def get_request(self):
         "Get the instance task request; or related model task query"
@@ -236,24 +275,31 @@ class Task(TimeStampedModel):
         return self.get_model()().request(self.method)
 
     def process_response(self, *args, **kwargs):
-        "An instance of a task"
-        if self.model_instance:
-            self.get_model().objects.get(id=self.model_instance).process(
-                self.method, *args, **kwargs
-            )
-        else:
-            self.get_model()().process(self.method, *args, **kwargs)
-
-        self.batch_status = Task.BatchStatus.BATCHED
-        self.batch_id = self.ticket.batch_id
-        self.save()
-
+        "An instance of a task"        
+        try:
+            if self.model_instance:
+                (
+                    self.get_model()
+                    .objects.get(id=self.model_instance)
+                    .process(self.method, *args, **kwargs)
+                )
+            else:
+                self.get_model()().process(self.method, *args, **kwargs)
+                
+            self.mark_success
+            self.save()
+    
+        except Exception as e:
+            logger.error(e)
+            logger.error(f'Marking task id: {self.id} failed')
+            self.mark_failed
+            self.save()
+            
+    def __str__(self):
+        return str(self.ticket)
 
 class BaseObjectMixin(TimeStampedModel):
     "Base object mixing that associated dependent models with their tickets"
-
-    batch_id = models.CharField(max_length=60, blank=True, null=True)
-    # task = models.ForeignKey(Task, related_name='task', blank=True, null=True, on_delete=models.SET_NULL)
 
     # Quickbooks Fields: if the model creates or modifies a QB transaction sync the two
     qbwc_list_id = models.CharField(max_length=120, blank=True, null=True)

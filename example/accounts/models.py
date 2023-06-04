@@ -3,6 +3,7 @@ from django.db import models
 from qbwc.models import BaseObjectMixin, Task
 from qbwc.decorators import string_escape_decorator
 from qbwc.parser import string_to_xml, parse_query_element, parse_time_stamp
+from qbwc.exceptions import QBXMLProcessingError
 
 
 class GlAccount(BaseObjectMixin):
@@ -209,7 +210,7 @@ class GlAccount(BaseObjectMixin):
                 self.save()
 
         except Exception as e:
-            raise KeyError(e) from e
+            raise QBXMLProcessingError(e)
 
     def __str__(self):
         return self.name

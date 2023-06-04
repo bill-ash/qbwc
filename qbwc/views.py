@@ -42,7 +42,7 @@ class QuickBooksService(ServiceBase):
             if Ticket.process.check_approved_tickets():
                 ticket = Ticket.process.get_next_ticket()
                 logger.info(f"Ticket Submitted: {ticket.ticket}")
-                ticket.processing()
+                ticket.processing
                 return [ticket.ticket, QBWC_CODES.CURRENT_COMPANY]
             else:
                 logger.info("No tickets in queue...")
@@ -81,6 +81,7 @@ class QuickBooksService(ServiceBase):
         ticket = Ticket.objects.get(ticket=ticket)
 
         try:
+            # Iterates through tasks looking for any incomplete tasks 
             work = ticket.get_task()
             qbxml = work.get_request()
         except Exception:
@@ -125,6 +126,7 @@ class QuickBooksService(ServiceBase):
             return -101
 
         if len(hresult) > 0:
+            # Handle errors that happen before processing 
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
             return -101
@@ -139,9 +141,10 @@ class QuickBooksService(ServiceBase):
             return -1
 
         return_value = ticket.get_completion_status()
+        
 
         if return_value == 100:
-            ticket.success()
+            ticket.success
 
         return return_value
 
@@ -198,7 +201,7 @@ class QuickBooksService(ServiceBase):
             f"connectionError(): ticket={ticket}, hresult={hresult}, message={message}"
         )
         ticket = Ticket.objects.get(ticket=ticket)
-        ticket.failed()
+        ticket.failed
         return QBWC_CODES.CONN_CLOSE_ERROR
 
     @srpc(Unicode, _returns=Unicode)
@@ -213,7 +216,7 @@ class QuickBooksService(ServiceBase):
         """
         logger.error(f"getLastError(): ticket={ticket}")
         ticket = Ticket.objects.get(ticket=ticket)
-        ticket.failed()
+        ticket.failed
         return f"Error processing ticket: {ticket}"
 
 

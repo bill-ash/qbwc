@@ -5,7 +5,7 @@ from qbwc.decorators import string_escape_decorator
 
 
 class OtherNameList(BaseObjectMixin):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
 
     @string_escape_decorator
     def request(self, method):
@@ -24,6 +24,20 @@ class OtherNameList(BaseObjectMixin):
                 </QBXML>
             """
 
+        if method == Task.TaskMethod.POST:
+            return f"""
+                <?qbxml version="15.0"?>
+                    <QBXML>
+                    <QBXMLMsgsRq onError="stopOnError">
+                        <OtherNameAddRq requestID="1">
+                            <OtherNameAdd>
+                                <Name>{self.name}</Name>
+                            </OtherNameAdd>
+                        </OtherNameAddRq >
+                    </QBXMLMsgsRq>
+                </QBXML>
+            """
+
     def process(self, method, response, *args, **kwargs):
         """
         Response handler:
@@ -34,9 +48,10 @@ class OtherNameList(BaseObjectMixin):
             if method == Task.TaskMethod.GET:
                 rs = string_to_xml(response)
                 for rs in rs.iter("OtherNameQueryRs"):
-                    for q in rs.iter("OtherNameRet"):
-                        other_name = parse_query_element(q)
-                        self.objects.update_or_create(
+                    for elm in rs.iter("OtherNameRet"):
+                        other_name = parse_query_element(elm)
+
+                        OtherNameList.objects.update_or_create(
                             qbwc_list_id=other_name["ListID"],
                             defaults={
                                 "name": other_name["Name"],
@@ -48,6 +63,20 @@ class OtherNameList(BaseObjectMixin):
                                 ),
                             },
                         )
+            if method == Task.TaskMethod.POST:
+                rs = string_to_xml(response)
+                for rs in rs.iter("OtherNameAddRs"):
+                    for elm in rs.iter("OtherNameRet"):
+                        other_name = parse_query_element(elm)
+                        self.qbwc_list_id = other_name["ListID"]
+                        self.qbwc_time_created = parse_time_stamp(
+                            other_name["TimeCreated"]
+                        )
+                        self.qbwc_time_modified = parse_time_stamp(
+                            other_name["TimeModified"]
+                        )
+                        self.save()
+
         except Exception as e:
             raise KeyError(e) from e
 

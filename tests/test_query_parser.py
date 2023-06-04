@@ -3,7 +3,7 @@ from qbwc.parser import parse_query_element, string_to_xml, check_status
 
 xml_path = Path().absolute()
 
-with open(xml_path / "tests/accounts.xml", "r") as xml:
+with open(xml_path / "tests/test_data/accounts.xml", "r") as xml:
     qbxml = xml.read()
 
 
