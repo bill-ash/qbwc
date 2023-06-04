@@ -13,10 +13,9 @@ gen_random_number = lambda x: str(uuid4())[:x]
 
 
 # ServiceAccount.objects.all()
-# Ticket.objects.all().delete()
-# Task.objects.all().delete()
-# GlAccount.objects.all().delete()
-
+Ticket.objects.all().delete()
+Task.objects.all().delete()
+GlAccount.objects.all().delete()
 
 service = ServiceAccount()
 service.app_name = "QBWC Data Sync"
@@ -29,22 +28,22 @@ service.save()
 
 
 # Create a ticket for a get request
-def new_gl_get():
+def sync_qb_accounts():
     ticket = Ticket()
     ticket.status = Ticket.TicketStatus.APPROVED
-    ticket.save()
-
     task = Task()
     task.ticket = ticket
-    task.model = "GlAccount"
+    task.model = GlAccount().get_model_name()
     task.method = Task.TaskMethod.GET
     task.model_instance = None
+    ticket.save()
     task.save()
 
 
 # # The ticket will always have a task: reverse lookup the task by the ticket
-new_gl_get()
-Ticket.objects.first().get_status_display()
+sync_qb_accounts()
+
+Ticket.objects.last().get_status_display()
 
 Ticket.objects.filter(status=Ticket.TicketStatus.FAILED).all()
 Ticket.objects.filter(status=Ticket.TicketStatus.SUCCESS).all()
@@ -52,20 +51,24 @@ Ticket.objects.filter(status=Ticket.TicketStatus.CREATED).all()
 Ticket.objects.filter(status=Ticket.TicketStatus.APPROVED).all()
 
 
-account_name = "New Account Name"
+# Create a new account 
+
+account_name = f"M<>lo's && World's {gen_random_number(2)}"
 
 a = GlAccount()
 a.name = account_name
-a.full_name = "New Account Full Name"
+a.full_name = f"New Accoun|,'\" \Full Name {gen_random_number(5)}"
 a.description = "Hello, World!"
 a.account_type = GlAccount.AccountType.OTHER_CURRENT_ASSET
-a.account_number = gen_random_number(8)
+a.account_number = gen_random_number(7)
 a.save()
+
+a.request('POST')
 
 # Create a new ticket
 ticket = Ticket()
 ticket.status = ticket.TicketStatus.APPROVED
-ticket.batch_id = gen_random_number(6)
+ticket.batch_id = gen_random_number(7)
 
 # Wrapper for new account creation
 task = Task()
@@ -76,8 +79,7 @@ task.ticket = ticket
 ticket.save()
 task.save()
 
-
-account_name = "New Account Name"
+a.request('POST')
 
 # Delete user created account
 # Deletes the account in QB and makes the account inactive in app

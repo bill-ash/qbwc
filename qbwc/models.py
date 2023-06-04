@@ -3,7 +3,6 @@ from uuid import uuid4
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password, check_password
-
 from django.contrib.contenttypes.models import ContentType
 
 
@@ -215,9 +214,6 @@ class Task(TimeStampedModel):
     model = models.CharField(max_length=90)
     ticket = models.ForeignKey(Ticket, related_name="tasks", on_delete=models.CASCADE)
 
-    # model_instance = models.ForeignKey(
-    #     "BaseObjectMixin", null=True, on_delete=models.CASCADE
-    # )
     model_instance = models.CharField(max_length=120, null=True, editable=False)
 
     def get_model(self):
@@ -278,3 +274,4 @@ class BaseObjectMixin(TimeStampedModel):
 
     class Meta:
         abstract = True
+

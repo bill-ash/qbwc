@@ -13,3 +13,6 @@ def parse_query_element(element, prefix=""):
         else:
             data[f"{prefix}{child.tag}"] = child.text
     return data
+
+def check_status(xml):
+    return [c.attrib.get('statusSeverity') for c in xml.iter() if 'statusSeverity' in c.attrib][0]

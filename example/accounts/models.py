@@ -1,9 +1,8 @@
 from django.db import models
 
 from qbwc.models import BaseObjectMixin, Task
-from qbwc.utils import parse_time_stamp
+from qbwc.utils import parse_time_stamp, string_escape_decorator
 from qbwc.parser import string_to_xml, parse_query_element
-
 
 class GlAccount(BaseObjectMixin):
     class AccountType(models.TextChoices):
@@ -70,11 +69,11 @@ class GlAccount(BaseObjectMixin):
         )
 
     # Mirror QB attributes
-    name = models.CharField(max_length=120, unique=True)
+    name = models.CharField(max_length=120)
     full_name = models.CharField(max_length=120, unique=True)
     description = models.TextField(blank=True, null=True)
     account_type = models.CharField(max_length=50, choices=AccountType.choices)
-    account_number = models.CharField(max_length=40, unique=False)
+    account_number = models.CharField(max_length=6, unique=False)
     mark_for_delete = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
@@ -84,7 +83,8 @@ class GlAccount(BaseObjectMixin):
 
     # Limit which accounts are displayed in the application to choose from
     display = models.BooleanField(default=True)
-
+    
+    @string_escape_decorator
     def request(self, method):
         """
         Write the requests that make the most sense for your application.
@@ -127,16 +127,16 @@ class GlAccount(BaseObjectMixin):
             # StandardTerms, ToDo, UnitOfMeasureSet, Vehicle, Vendor, VendorType, WorkersCompCode
             # -->
             return f"""
-            <?qbxml version="16.0"?>
-            <QBXML>
-                <QBXMLMsgsRq onError="stopOnError">
-                    <ListDelRq>      
-                        <ListDelType>Account</ListDelType>
-                        <ListID>{self.qbwc_list_id}</ListID>
-                   </ListDelRq>
-            </QBXMLMsgsRq>
-            </QBXML>
-            """
+                <?qbxml version="16.0"?>
+                <QBXML>
+                    <QBXMLMsgsRq onError="stopOnError">
+                        <ListDelRq>      
+                            <ListDelType>Account</ListDelType>
+                            <ListID>{self.qbwc_list_id}</ListID>
+                    </ListDelRq>
+                </QBXMLMsgsRq>
+                </QBXML>
+                """
 
     def process(self, method, response, *args, **kwargs):
         """
@@ -152,9 +152,9 @@ class GlAccount(BaseObjectMixin):
                         account = parse_query_element(q)
                         GlAccount.objects.update_or_create(
                             # Account names must be unique
-                            name=account["Name"],
+                                qbwc_list_id=account["ListID"],
                             defaults={
-                                "qbwc_list_id": account["ListID"],
+                                'name': account["Name"],
                                 "full_name": account["FullName"],
                                 "description": account.get("Desc", ""),
                                 "account_type": account["AccountType"],

@@ -7,11 +7,10 @@ from spyne.model.primitive import Integer, String
 from spyne.service import ServiceBase
 
 from qbwc.app_settings import QBWC_CODES, QBWC_VERSION
-
+from qbwc.parser import string_to_xml, check_status
 from qbwc.models import ServiceAccount, Ticket
 
 logger = logging.getLogger("django")
-
 
 class QuickBooksService(ServiceBase):
     @srpc(Unicode, Unicode, _returns=Array(Unicode))
@@ -77,16 +76,15 @@ class QuickBooksService(ServiceBase):
         """
         logger.info("sendRequestXML() has been called")
         logger.info(f"ticket: {ticket}")
-        logger.info(f"strHCPResponse {strHCPResponse}")
-        logger.info(f"strCompanyFileName {strCompanyFileName}")
-
+        
         ticket = Ticket.objects.get(ticket=ticket)
+        
         try:
             work = ticket.get_task()
             qbxml = work.get_request()
         except Exception:
             logger.error(f"Error processing request {ticket}")
-            return -500
+            return ""
         logger.info(f"Processing ticket: {ticket}")
         logger.info(f"Sending request: {qbxml}")
 
@@ -96,6 +94,8 @@ class QuickBooksService(ServiceBase):
     def receiveResponseXML(ticket, response, hresult, message):
         """
         Returns the data response form the QuickBooks WebConnector.
+        
+        Not all errors generate hex messages.
 
         Args:
             ticket (str): ticket
@@ -106,33 +106,41 @@ class QuickBooksService(ServiceBase):
         @return (int) Positive integer 100 for completed work, and less than 100 to move to the next ticket.
             Needs to be handled by the session manager.
         """
-        logger.info("receiveResponseXML()")
+        logger.info("receiveResponseXML() has been called")
         logger.info(f"ticket={ticket}")
         logger.info(f"response={response}")
         logger.info(f"hresult={hresult}")
         logger.info(f"message={message}")
-
-        return_value = 0
-
-        if len(hresult) > 0:
+        
+        return_value = 0 
+                       
+        try:
+            str_response = string_to_xml(response)
+            response_status = check_status(str_response)
+            assert response_status != "Error"
+        except Exception as e:
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
-            return_value = -101
+            return -101
+                
+        if len(hresult) > 0: 
+            logger.error(f"hresult={hresult}")
+            logger.error(f"message={message}")
+            return -101
 
-        else:
-            ticket = Ticket.objects.get(ticket=ticket)
-            task = ticket.get_task()
+        ticket = Ticket.objects.get(ticket=ticket)
+        task = ticket.get_task()
 
-            try:
-                task.process_response(response, message)
-            except Exception as e:
-                logger.error(f"Failed to process response: {e}")
-                return -1
+        try:
+            task.process_response(response, message)
+        except Exception as e:
+            logger.error(f"Failed to process response: {e}")
+            return -1
 
-            return_value = ticket.get_completion_status()
+        return_value = ticket.get_completion_status()
 
-            if return_value == 100:
-                ticket.success()
+        if return_value == 100:
+            ticket.success()
 
         return return_value
 
