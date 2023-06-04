@@ -23,8 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # QBWC service
     "qbwc",
-    "django_extensions"
-    
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -80,4 +79,3 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-

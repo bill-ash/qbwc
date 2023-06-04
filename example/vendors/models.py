@@ -9,13 +9,11 @@ from qbwc.exceptions import QBXMLProcessingError, QBXMLRequestError
 class Vendor(BaseObjectMixin):
     name = models.CharField(max_length=120, unique=True)
     is_active = models.BooleanField(default=True)
-    
+
     help_name = models.CharField(max_length=60, blank=True, null=True)
     help_description = models.TextField(blank=True, null=True)
     display = models.BooleanField(default=True)
     """Is the record viewable in app"""
-    
-    
 
     def request(self, method, *args, **kwargs):
         """Sync vendors"""
@@ -30,7 +28,7 @@ class Vendor(BaseObjectMixin):
                     </QBXMLMsgsRq>
                     </QBXML>
             """
-        
+
         if method == Task.TaskMethod.POST:
             return f"""
             <?qbxml version="16.0"?>
@@ -52,7 +50,7 @@ class Vendor(BaseObjectMixin):
             'ContactsRetListID': '0000000000000p81',
             'ContactsRetTimeCreated': '2012-07-26T08:46:25-05:00',
             'ContactsRetTimeModified': '2012-07-26T08:46:25-05:00',
-            'ContactsRetEditSequence': '1343306785', 
+            'ContactsRetEditSequence': '1343306785',
             'ContactsRetFirstName': 'Vivian Zeng',
             'VendorAddressBlockAddr1': 'Zeng Building Supplies',
             'VendorAddressBlockAddr2': 'Vivian Zeng',
@@ -61,15 +59,15 @@ class Vendor(BaseObjectMixin):
             'VendorAddressAddr1': 'Zeng Building Supplies',
             'VendorAddressAddr2': 'Vivian Zeng',
             'VendorAddressAddr3': '345 Main St.',
-            'VendorAddressCity': 'Middlefield', 
-            'VendorAddressState': 'CA', 
+            'VendorAddressCity': 'Middlefield',
+            'VendorAddressState': 'CA',
             'VendorAddressPostalCode': '94043',
             'ListID': '800000BD-1181226959',
             'TimeCreated': '2007-06-07T10:35:59-05:00',
             'TimeModified': '2023-12-16T00:06:44-05:00',
             'EditSequence': '1702703204',
-            'Name': 'Zeng Building Supplies', 
-            'IsActive': 'true', 
+            'Name': 'Zeng Building Supplies',
+            'IsActive': 'true',
             'CompanyName': 'Zeng Building Supplies',
             'FirstName': 'Vivian',
             'LastName': 'Zeng',
@@ -103,9 +101,7 @@ class Vendor(BaseObjectMixin):
                     for elem in rs.iter("VendorRet"):
                         vendor = parse_query_element(elem)
                         self.qbwc_list_id - vendor["ListID"]
-                        self.qbwc_time_created = parse_time_stamp(
-                            vendor["TimeCreated"]
-                        )
+                        self.qbwc_time_created = parse_time_stamp(vendor["TimeCreated"])
                         self.qbwc_time_modified = parse_time_stamp(
                             vendor["TimeModified"]
                         )

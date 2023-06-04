@@ -13,6 +13,7 @@ gen_random_number = lambda x: str(uuid4())[:x]
 # This prevents the user from having to take specific actions beofre an event to
 # ensure the application, and quickbooks are in sync.
 
+
 # \\TODO: A vendor, other name, or account is written into the app; and a QB
 # sync replaces or overwrites the existing record
 def wrap_task(model, ticket, method):
@@ -164,7 +165,6 @@ def create_other_name():
 create_other_name()
 
 
-
 def create_account_other_name():
     ticket = Ticket()
     ticket.status = Ticket.TicketStatus.APPROVED
@@ -211,14 +211,14 @@ def create_vendors():
     ticket = Ticket()
     ticket.status = ticket.TicketStatus.APPROVED
     ticket.save()
-    
+
     for _ in range(1, 5):
         vendor = Vendor()
         vendor.name = f"sdfj{gen_random_number(5)}"
         vendor.save()
         wrap_task(vendor, ticket, method=Task.TaskMethod.POST)
-        
+
     wrap_task(Vendor(), ticket, "GET")
-        
+
 
 create_vendors()

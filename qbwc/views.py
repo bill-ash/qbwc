@@ -81,7 +81,7 @@ class QuickBooksService(ServiceBase):
         ticket = Ticket.objects.get(ticket=ticket)
 
         try:
-            # Iterates through tasks looking for any incomplete tasks 
+            # Iterates through tasks looking for any incomplete tasks
             work = ticket.get_task()
             qbxml = work.get_request()
         except Exception:
@@ -126,7 +126,7 @@ class QuickBooksService(ServiceBase):
             return -101
 
         if len(hresult) > 0:
-            # Handle errors that happen before processing 
+            # Handle errors that happen before processing
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
             return -101
@@ -141,7 +141,6 @@ class QuickBooksService(ServiceBase):
             return -1
 
         return_value = ticket.get_completion_status()
-        
 
         if return_value == 100:
             ticket.success

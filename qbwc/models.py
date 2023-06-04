@@ -1,4 +1,4 @@
-import logging 
+import logging
 from uuid import uuid4
 
 from django.db import models
@@ -9,6 +9,7 @@ from django.contrib.contenttypes.models import ContentType
 from qbwc.exceptions import QBXMLProcessingError
 
 logger = logging.getLogger(__name__)
+
 
 class TimeStampedModel(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
@@ -121,16 +122,16 @@ class Ticket(TimeStampedModel):
         FAILED = ("500", "Failed")
 
     ticket = models.CharField(max_length=60, default=uuid4, editable=False, unique=True)
-    
+
     # User defined batch Id: submits records to QuickBooks
     batch_id = models.CharField(
         max_length=60, default=uuid4, editable=False, unique=True
     )
-        
+
     status = models.CharField(
         max_length=3, choices=TicketStatus.choices, default=TicketStatus.CREATED
     )
-    
+
     owner = models.ForeignKey(get_user_model(), null=True, on_delete=models.SET_NULL)
 
     objects = models.Manager()
@@ -171,15 +172,17 @@ class Ticket(TimeStampedModel):
             failed_task = self.get_task()
             failed_task.mark_failed
         except Exception as e:
-            logger.error('Could not mark task failed')
-            
+            logger.error("Could not mark task failed")
+
         self.status = Ticket.TicketStatus.FAILED
         self.save()
 
     def get_completion_status(self):
         return int(
             (
-                self.tasks.filter(Q(status=Task.TaskStatus.SUCCESS) | Q(status=Task.TaskStatus.FAILED)).count()
+                self.tasks.filter(
+                    Q(status=Task.TaskStatus.SUCCESS) | Q(status=Task.TaskStatus.FAILED)
+                ).count()
                 / self.tasks.all().count()
             )
             * 100
@@ -187,7 +190,7 @@ class Ticket(TimeStampedModel):
 
     def __str__(self):
         return str(self.ticket)
-    
+
 
 class Task(TimeStampedModel):
     "Wrapper around app transactions that to affect change or action in QB"
@@ -216,13 +219,16 @@ class Task(TimeStampedModel):
 
     class TaskStatus(models.TextChoices):
         CREATED = (
-            "CREATED", "CREATED",
+            "CREATED",
+            "CREATED",
         )
         SUCCESS = (
-            "SUCCESS", "SUCCESS",
+            "SUCCESS",
+            "SUCCESS",
         )
         FAILED = (
-            "FAILED", "FAILED", 
+            "FAILED",
+            "FAILED",
         )
 
     status = models.CharField(
@@ -232,9 +238,9 @@ class Task(TimeStampedModel):
     method = models.CharField(
         max_length=6, choices=TaskMethod.choices, default=TaskMethod.GET
     )
-    
+
     ticket = models.ForeignKey(Ticket, related_name="tasks", on_delete=models.CASCADE)
-    
+
     model = models.CharField(max_length=90)
     model_instance = models.CharField(max_length=120, null=True, editable=False)
 
@@ -246,23 +252,22 @@ class Task(TimeStampedModel):
         content_type = ContentType.objects.get(model=self.model.lower())
         model = content_type.model_class()
         return model
-    
+
     def get_model_instance(self):
         if self.model_instance:
             model = self.get_model()
-            return model.objects.get(id=self.model_instance) 
+            return model.objects.get(id=self.model_instance)
         return None
-    
+
     @property
     def mark_failed(self):
         self.status = self.TaskStatus.FAILED
         self.save()
-        
+
     @property
     def mark_success(self):
         self.status = self.TaskStatus.SUCCESS
         self.save()
-        
 
     def get_request(self):
         "Get the instance task request; or related model task query"
@@ -275,7 +280,7 @@ class Task(TimeStampedModel):
         return self.get_model()().request(self.method)
 
     def process_response(self, *args, **kwargs):
-        "An instance of a task"        
+        "An instance of a task"
         try:
             if self.model_instance:
                 (
@@ -285,18 +290,19 @@ class Task(TimeStampedModel):
                 )
             else:
                 self.get_model()().process(self.method, *args, **kwargs)
-                
+
             self.mark_success
             self.save()
-    
+
         except Exception as e:
             logger.error(e)
-            logger.error(f'Marking task id: {self.id} failed')
+            logger.error(f"Marking task id: {self.id} failed")
             self.mark_failed
             self.save()
-            
+
     def __str__(self):
         return str(self.ticket)
+
 
 class BaseObjectMixin(TimeStampedModel):
     "Base object mixing that associated dependent models with their tickets"
