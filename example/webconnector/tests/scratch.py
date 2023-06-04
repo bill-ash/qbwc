@@ -27,15 +27,26 @@ def wrap_task(model, ticket, method):
     task.save()
 
 
+def init_ticket():
+    ticket = Ticket()
+    ticket.status = Ticket.TicketStatus.APPROVED
+    ticket.save()
+    return ticket
+
+
+
+
 from accounts.models import GlAccount
 from qblists.models import OtherNameList
 from vendors.models import Vendor
+from customers.models import Customer
 
 # ServiceAccount.objects.all()
 # Ticket.objects.all().delete()
 # Task.objects.all().delete()
 # GlAccount.objects.all().delete()
 # OtherNameList.objects.all().delete()
+# Customer.objects.all().delete()
 
 # service = ServiceAccount()
 # service.app_name = "QBWC Data Sync"
@@ -222,3 +233,12 @@ def create_vendors():
 
 
 create_vendors()
+
+
+
+def sync_customers():
+    ticket = init_ticket()
+    wrap_task(Customer(), ticket, "GET")
+    
+    
+sync_customers()

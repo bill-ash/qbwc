@@ -9,6 +9,12 @@ def string_to_xml(s):
     return ET.fromstring(s)
 
 
+def parse_table_elems(s, table):
+    elems = list(s.iter(table))
+    return [parse_query_element(c) for c in elems]
+    
+
+
 def parse_query_element(element, prefix=""):
     data = {}
     for child in element:

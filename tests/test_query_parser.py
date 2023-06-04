@@ -1,19 +1,40 @@
 from pathlib import Path
-from qbwc.parser import parse_query_element, string_to_xml, check_status
+from qbwc.parser import (
+    string_to_xml,
+    parse_query_element,
+    parse_table_elems,
+    check_status
+)
 
-xml_path = Path().absolute()
 
-with open(xml_path / "tests/test_data/accounts.xml", "r") as xml:
-    qbxml = xml.read()
+
+def read_test_xml(obj):
+    xml_path = Path().absolute()
+    with open(xml_path / f"tests/test_data/{obj}.xml", "r") as xml:
+        return xml.read()
 
 
 def test_parser():
-    root = string_to_xml(qbxml)
+    accounts = read_test_xml('accounts')
+    root = string_to_xml(accounts)
     data_list = []
     for account_rs in root.iter("AccountQueryRs"):
         data_list.extend(parse_query_element(q) for q in account_rs.iter("AccountRet"))
 
     assert len(data_list) == 116
+
+
+def test_customer_parser():
+    customers = read_test_xml('customers')
+    root = string_to_xml(customers)
+    elems = parse_table_elems(root, "CustomerRet")
+    assert len(elems) == 146
+    
+    # elems[10] 
+    # r = pd.json_normalize(elems) 
+    # r.to_clipboard()
+    
+
 
 
 error = """<?xml version="1.0" ?>
@@ -72,3 +93,5 @@ def test_parse_success():
     s = string_to_xml(success)
     assert isinstance(check_status(s), str)
     assert check_status(s) == "Info"
+
+
