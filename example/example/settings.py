@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     "accounts",
     "customers",
     "creditcards",
-    "expenses",
     "qblists",
     "vendors",
 ]

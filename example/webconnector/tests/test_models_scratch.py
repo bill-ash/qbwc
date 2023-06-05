@@ -1,45 +1,12 @@
 """
 Testing Module for workshopping models and methods
 """
-import pytest 
+import pytest
+from webconnector.tests.utils import *
 
 
-from uuid import uuid4
 from qbwc.models import Ticket, Task
 from qbwc.models import ServiceAccount
-
-gen_random_number = lambda x: str(uuid4())[:x]
-
-# Grouped tasks:
-# Abstraction for linking together multiple entity calls within a single ticket:
-# This prevents the user from having to take specific actions beofre an event to
-# ensure the application, and quickbooks are in sync.
-
-
-# \\TODO: A vendor, other name, or account is written into the app; and a QB
-# sync replaces or overwrites the existing record
-
-pytestmark = pytest.mark.skip(reason="Skipping entire file")
-
-
-def wrap_task(model, ticket, method):
-    task = Task()
-    task.ticket = ticket
-    task.method = method
-    task.model = model.get_model_name()
-    instance = model.get_str_id()
-    if instance != "None":
-        task.model_instance = instance
-    task.save()
-
-
-def init_ticket():
-    ticket = Ticket()
-    ticket.status = Ticket.TicketStatus.APPROVED
-    ticket.save()
-    return ticket
-
-
 from accounts.models import GlAccount
 from qblists.models import OtherNameList
 from vendors.models import Vendor
@@ -248,11 +215,10 @@ def sync_customers():
 
 # sync_customers()
 
+
 def sync_cards():
     ticket = init_ticket()
-    wrap_task(CreditCard(), ticket, 'GET')
+    wrap_task(CreditCard(), ticket, "GET")
+
 
 # sync_cards()
-
-
-

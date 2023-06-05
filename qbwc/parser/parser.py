@@ -15,7 +15,8 @@ def parse_table_elems(s, table):
 
 
 def truthy(s):
-    return s == 'true'
+    return s == "true"
+
 
 def parse_query_element(element, prefix=""):
     data = {}

@@ -3,22 +3,25 @@ TODO: more research is need on whether the additional complexity assocatied with
 generic foreign keys is worth the investment. 
 """
 
-import pytest 
+import pytest
+
 pytestmark = pytest.mark.skip(reason="Skipping entire file")
 
-def skip(): 
+
+def skip():
     from creditcards.models import CreditCard, CreditCardCharge
+
     # from creditcards.models import  CreditCardVendor
 
-    from vendors.models import Vendor 
+    from vendors.models import Vendor
     from qblists.models import OtherNameList
 
     card = CreditCard.objects.first()
 
-    vendor = Vendor(name='hello')
+    vendor = Vendor(name="hello")
     vendor.save()
 
-    other_name = OtherNameList(name='world')
+    other_name = OtherNameList(name="world")
     other_name.save()
 
     # card_vendor = CreditCardVendor(content_object=vendor)
@@ -27,32 +30,27 @@ def skip():
     # card_other = CreditCardVendor(content_object=other_name)
     # card_other.save()
 
-
     charge_1 = CreditCardCharge(
-        credit_card = card, 
-        vendor = Vendor.objects.last(),
-        description = "Charge One",
-        amount = 100
+        credit_card=card,
+        vendor=Vendor.objects.last(),
+        description="Charge One",
+        amount=100,
     )
     charge_1.save()
     charge_1.vendor.pk
 
-
     charge_2 = CreditCardCharge(
-        credit_card = card, 
-        vendor = OtherNameList.objects.last(),
-        description = "Charge Two",
-        amount = 200
+        credit_card=card,
+        vendor=OtherNameList.objects.last(),
+        description="Charge Two",
+        amount=200,
     )
     charge_2.save()
 
-
     Vendor.objects.all()
-    vendor  = Vendor.objects.last()
+    vendor = Vendor.objects.last()
     OtherNameList.objects.all()
     other_name = OtherNameList.objects.last()
-
-
 
     res = CreditCardCharge.objects.last()
 
@@ -79,5 +77,3 @@ def skip():
     CreditCardCharge.objects.filter(othernames=other_name)
 
     # CreditCardCharge.objects.all().delete()
-
-

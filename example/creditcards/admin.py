@@ -21,7 +21,7 @@ class CreditChargeAdmin(admin.ModelAdmin):
     )
     list_display_links = ("vendor",)
     ordering = ("-last_update",)
-    
+
 
 admin.site.register(CreditCard, CreditCardAdmin)
 admin.site.register(CreditCardCharge, CreditChargeAdmin)

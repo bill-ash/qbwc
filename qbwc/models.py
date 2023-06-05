@@ -281,6 +281,7 @@ class Task(TimeStampedModel):
 
     def process_response(self, *args, **kwargs):
         "An instance of a task"
+
         try:
             if self.model_instance:
                 (

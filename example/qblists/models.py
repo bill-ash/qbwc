@@ -5,11 +5,11 @@ from qbwc.decorators import string_escape_decorator
 
 from django.contrib.contenttypes.fields import GenericRelation
 
+
 class OtherNameList(BaseObjectMixin):
     name = models.CharField(max_length=60, unique=True)
     # charges = GenericRelation(CreditCardCharge, related_query_name="othernames")
-    
-    
+
     @string_escape_decorator
     def request(self, method):
         """

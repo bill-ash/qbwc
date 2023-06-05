@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Vendor",
+            name="Customer",
             fields=[
                 (
                     "id",
@@ -29,10 +29,11 @@ class Migration(migrations.Migration):
                 ),
                 ("qbwc_time_created", models.DateTimeField(blank=True, null=True)),
                 ("qbwc_time_modified", models.DateTimeField(blank=True, null=True)),
-                ("name", models.CharField(max_length=120, unique=True)),
+                ("name", models.CharField(blank=True, max_length=120, null=True)),
+                ("company_name", models.CharField(max_length=60)),
+                ("first_name", models.CharField(blank=True, max_length=60, null=True)),
+                ("last_name", models.CharField(blank=True, max_length=60, null=True)),
                 ("is_active", models.BooleanField(default=True)),
-                ("help_name", models.CharField(blank=True, max_length=60, null=True)),
-                ("help_description", models.TextField(blank=True, null=True)),
                 ("display", models.BooleanField(default=True)),
             ],
             options={
