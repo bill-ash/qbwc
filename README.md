@@ -1,19 +1,24 @@
-## Quickbooks Desktop Webconnector (qbwc)
+## QBWC: Quickbooks Desktop Webconnector 
 
-Django package for syncing and transferring data with external databases via the 
-Quickbooks Webconnector (QBWC). 
+**Experimental**
 
-Implementation includes transfer services for: 
+Django package for syncing data between django application and 
+QuickBooks Desktop via the Quickbooks Webconnector (QBWC). 
+
+Implementation includes transfer services (push, pull, re-sync) for: 
 
 - gl accounts  
 - other name list
-- expenses (credit card transactions)
+- expenses (credit card charges)
+- customers 
+- credit cards 
+- vendors
 
 Road map: 
 
-- bills
-- customers 
-
+- vendor bills
+- journal entries
+- QuickBooks Reports 
 
 ## Installation 
 
@@ -30,7 +35,11 @@ pip install qbwc
 ```
 
 
+## Example 
 
+Example directory includes application with sample apps for each of the entites mentioned above. 
+
+Repeated patterns will be abstracted in the `BaseObjectMixin` model and are likely to change.
 
 
 
