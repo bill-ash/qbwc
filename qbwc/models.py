@@ -44,8 +44,6 @@ class ServiceAccount(TimeStampedModel):
     app_owner_id = models.CharField(max_length=60, default=uuid4, editable=False)
     app_file_id = models.CharField(max_length=60, default=uuid4, editable=False)
     file_path = models.CharField(max_length=150, blank=True, null=True)
-    # URL of the application making requests
-    # UUID included in the QBWC.qwc
     password = models.CharField(max_length=120, default="test")
     is_active = models.BooleanField(default=True)
     config = models.TextField(null=True, blank=True)
