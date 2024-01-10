@@ -166,6 +166,7 @@ class Ticket(TimeStampedModel):
     @property
     def failed(self):
         "View method: update ticket status to failed"
+        # Should be able to remove: tasks are errored on view
         try:
             failed_task = self.get_task()
             failed_task.mark_failed

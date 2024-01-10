@@ -115,6 +115,8 @@ class QuickBooksService(ServiceBase):
         logger.info(f"message={message}")
 
         return_value = 0
+        ticket = Ticket.objects.get(ticket=ticket)
+        task = ticket.get_task()
 
         try:
             str_response = string_to_xml(response)
@@ -123,20 +125,23 @@ class QuickBooksService(ServiceBase):
         except Exception as e:
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
-            return -101
+            task.mark_failed
+            return ticket.get_completion_status()
+            # return -101
 
         if len(hresult) > 0:
             # Handle errors that happen before processing
             logger.error(f"hresult={hresult}")
             logger.error(f"message={message}")
-            return -101
-
-        ticket = Ticket.objects.get(ticket=ticket)
-        task = ticket.get_task()
+            task.mark_failed
+            return ticket.get_completion_status()
+            # return -101
+        
 
         try:
             task.process_response(response, message)
         except Exception as e:
+            # Successful operation that times out or errors on save needs to be updated
             logger.error(f"Failed to process response: {e}")
             return -1
 
